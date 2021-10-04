@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/generacion-semilla/static/css/main.a617e044.chunk.css",
+    "main.js": "/generacion-semilla/static/js/main.12af7732.chunk.js",
+    "main.js.map": "/generacion-semilla/static/js/main.12af7732.chunk.js.map",
+    "runtime-main.js": "/generacion-semilla/static/js/runtime-main.e08e2e4d.js",
+    "runtime-main.js.map": "/generacion-semilla/static/js/runtime-main.e08e2e4d.js.map",
+    "static/js/2.2b8acef7.chunk.js": "/generacion-semilla/static/js/2.2b8acef7.chunk.js",
+    "static/js/2.2b8acef7.chunk.js.map": "/generacion-semilla/static/js/2.2b8acef7.chunk.js.map",
+    "static/js/3.78323209.chunk.js": "/generacion-semilla/static/js/3.78323209.chunk.js",
+    "static/js/3.78323209.chunk.js.map": "/generacion-semilla/static/js/3.78323209.chunk.js.map",
+    "index.html": "/generacion-semilla/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/generacion-semilla/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.2b8acef7.chunk.js.LICENSE.txt": "/generacion-semilla/static/js/2.2b8acef7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e08e2e4d.js",
+    "static/js/2.2b8acef7.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.12af7732.chunk.js"
+  ]
+}
