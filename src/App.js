@@ -7,6 +7,7 @@ import About from "./pages/about";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Products from "./pages/products";
+import ProductDetail from "./pages/product_detail";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                   <Switch>
                       <Route exact path='/' component={Home}></Route>
                       <Route exact path='/products' component={Products}></Route>
+                      <Route path='/products/:productName' component={ProductDetail}></Route>
                       <Route exact path='/contact' component={Contact}></Route>
                       <Route exact path='/about' component={About}></Route>
                   </Switch>
