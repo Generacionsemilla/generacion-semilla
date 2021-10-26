@@ -7,6 +7,7 @@ import About from "./pages/about";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Products from "./pages/products";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
