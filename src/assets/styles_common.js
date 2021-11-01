@@ -1,4 +1,4 @@
-export const Styles_common = {
+export const STYLES_COMMON = {
     colors: {
         lilandia: '#A9A5C5',
         tusaturado: '#30C4B5',
