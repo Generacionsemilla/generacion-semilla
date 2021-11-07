@@ -2,3 +2,9 @@
   font-family: 'Better Together Spaced';
   src: local('Better Together Spaced'), url(./assets/fonts/better_together_spaced.ttf) format('truetype');
 }
+
+body {
+  background-image: url("./assets/grid.svg");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}

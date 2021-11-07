@@ -17,7 +17,6 @@ const Footer = () => {
                 backgroundImage: `url(${background})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
 
             },
             icon:{
@@ -44,6 +43,7 @@ const Footer = () => {
     }
 
   return (
+      <footer>
         <Row style={styles.footer_d.footer}>
             <Row className={'text-center'} style={styles.footer_d.rows}>
               <Col xs={{span: 2,offset:5}}>
@@ -73,6 +73,7 @@ const Footer = () => {
                 <Col>Caseros, Buenos aires</Col>
             </Row>
         </Row>
+      </footer>
   );
 };
 
