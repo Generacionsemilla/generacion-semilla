@@ -1,38 +1,69 @@
 import React from 'react';
 import {useTranslation} from "react-i18next";
 import {Button, Col, Row} from "react-bootstrap";
-import logo from '../assets/home/desktop/logo_reducido.png'
+import logo from '../assets/home/desktop/logo.png'
 import {STYLES_COMMON} from "../assets/styles_common";
-
-const styles = {
-    mainRow:{
-        minHeight: '500px',
-        fontFamily: 'Better Together Spaced',
-        fontSize: '30px'
-    },
-    logo:{
-        width: '100%'
-    },
-    button:{
-        width: '138px',
-        height: '38px',
-        borderRadius: '6px',
-        borderColor: STYLES_COMMON.colors.tusaturado,
-        backgroundColor: STYLES_COMMON.colors.tusaturado,
-        filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
-        fontSize: '30px'
-    }
-
-}
+import central_paintings from "../assets/home/desktop/central_paintings.png";
+import {useMediaQuery} from "react-responsive";
 
 const Home = () => {
     const { t } = useTranslation();
+
+    const medium = useMediaQuery({ query: '(max-width: 992px)' });
+
+    const styles = {
+        mainRow:{
+            minHeight: '500px',
+            fontSize: medium ? '12px' : '16px',
+            letterSpacing: '3px'
+        },
+        logo:{
+            width: '100%'
+        },
+        button:{
+            width: medium ? '110px' :'138px',
+            height: medium ? '28px' :'38px',
+            borderRadius: '6px',
+            borderColor: STYLES_COMMON.colors.tusaturado,
+            backgroundColor: STYLES_COMMON.colors.tusaturado,
+            filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal',
+            lineHeight: '2',
+            letterSpacing: '3px',
+            fontSize: medium ? '12px' : '16px'
+        },
+        logoPhrase: {
+            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal'
+        },
+        logoContainer:{
+            backgroundImage: `url(${central_paintings})`,
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%',
+            padding: '40px'
+        }
+
+    }
     return (
             <Row style={styles.mainRow} className={'text-center'}>
-                <Col xs={{span:4, offset: 4}}>
-                    <img style={styles.logo} src={logo}/>
-                    <p className={'mt-5'}><span>Editorial </span><span style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                    <Button className={'btn btn-sm mt-5'} style={styles.button}> Conocenos</Button>
+                <Col xs={{span:8, offset: 2}}>
+                    <div style={styles.logoContainer}>
+                        <Row >
+                            <Col xs={{span:12, offset: 0}} sm={{span:10, offset: 1}} lg={{span:8, offset: 2}}>
+                                <img style={styles.logo} src={logo}/>
+                            </Col>
+                            <Col xs={{span:12}} className={'text-center mt-3'}>
+                                <p style={styles.logoPhrase}><span>Editorial </span><span style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
+                            </Col>
+                            <Col xs={{span:12}} className={'text-center mt-md-5 mt-sm-2'}>
+                                <Button className={'btn btn-sm'} style={styles.button}> Conocenos</Button>
+                            </Col>
+                        </Row>
+                    </div>
                 </Col>
             </Row>
         );

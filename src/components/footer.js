@@ -37,7 +37,10 @@ const Footer = () => {
                 fontSize: '14px',
                 color: STYLES_COMMON.colors.blancoHielo,
                 minHeight: '100px',
-                alignItems: 'center'
+                alignItems: 'center',
+                fontFamily: 'filson-pro,sans-serif',
+                fontWeight: '400',
+                fontStyle: 'normal'
             }
         }
     }
@@ -66,11 +69,11 @@ const Footer = () => {
                 <Col></Col>
             </Row>
             <Row className={'text-center'} style={styles.footer_d.textsRow}>
-                <Col>Envios a todo el pais</Col>
+                <Col>Envíos a todo el país</Col>
                 <Col></Col>
-                <Col>Generacion semilla</Col>
+                <Col>©Generación semilla, 2021</Col>
                 <Col></Col>
-                <Col>Caseros, Buenos aires</Col>
+                <Col>Caseros, Gran Buenos aires</Col>
             </Row>
         </Row>
       </footer>

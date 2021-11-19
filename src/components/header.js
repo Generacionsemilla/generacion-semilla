@@ -11,7 +11,7 @@ import {STYLES_COMMON} from "../assets/styles_common";
 const Header = () => {
     const [menuMOpen, setMenuMOpen] = useState(false);
 
-    //const large = useMediaQuery({ query: '(min-width: 992px)' });
+    const medium = useMediaQuery({ query: '(max-width: 992px)' });
     const styles = {
         header_d:{
             iconDesktop:{
@@ -24,7 +24,7 @@ const Header = () => {
             },
             header:{
                 height: '180px',
-                fontFamily: 'Better Together Spaced'
+                letterSpacing: '3px'
             },
             headerBackground:{
                 padding: '0px',
@@ -41,12 +41,15 @@ const Header = () => {
                 left: '0'
             },
             headerLink:{
-                fontSize: '40px',
+                fontSize: medium ? '14px' : '22px',
                 textDecoration: 'none',
-                color: STYLES_COMMON.colors.blancoHielo
+                color: STYLES_COMMON.colors.blancoHielo,
+                fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+                fontWeight: '700',
+                fontStyle: 'normal'
             },
             linksRow:{
-                lineHeight: '2'
+                lineHeight: '3'
             }
         },
         header_m:{
@@ -60,7 +63,10 @@ const Header = () => {
             headerLink:{
                 fontSize: '30px',
                 textDecoration: 'none',
-                color: STYLES_COMMON.colors.blancoHielo
+                color: STYLES_COMMON.colors.blancoHielo,
+                fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+                fontWeight: '700',
+                fontStyle: 'normal'
             },
             linksDiv: {
             }
