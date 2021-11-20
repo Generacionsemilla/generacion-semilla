@@ -1,7 +1,7 @@
 export const TRANSLATIONS_ES = {
     "title": "Generación semilla",
     header: {
-        "home": "Inicio",
+        "home": "Home",
         "about": "Nosotrxs",
         "contact": "Contacto",
         "store": "Tienda",
