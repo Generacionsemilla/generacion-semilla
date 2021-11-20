@@ -7,4 +7,5 @@ body {
   background-image: url("./assets/grid.svg");
   background-size: 200px 200px;
   background-repeat: repeat;
+  overflow-x: hidden;
 }

@@ -4,6 +4,8 @@ import {Button, Col, Row} from "react-bootstrap";
 import logo from '../assets/home/desktop/logo.png'
 import {STYLES_COMMON} from "../assets/styles_common";
 import central_paintings from "../assets/home/desktop/central_paintings.png";
+import drawings_right from "../assets/home/desktop/drawings_right.svg";
+import drawings_left from "../assets/home/desktop/drawings_left.svg";
 import {useMediaQuery} from "react-responsive";
 
 const Home = () => {
@@ -45,12 +47,24 @@ const Home = () => {
             backgroundRepeat: 'no-repeat',
             backgroundSize: '100% 100%',
             padding: '40px'
+        },
+        drawings_right:{
+            maxWidth: '30%',
+            position: 'absolute',
+            right: '0',
+            top: '50%'
+        },
+        drawings_left:{
+            maxWidth: '30%',
+            position: 'absolute',
+            left: '-10%',
+            top: '50%'
         }
 
     }
     return (
             <Row style={styles.mainRow} className={'text-center'}>
-                <Col xs={{span:8, offset: 2}}>
+                <Col xs={{span:10, offset: 1}} xl={{span:8, offset: 2}}>
                     <div style={styles.logoContainer}>
                         <Row >
                             <Col xs={{span:12, offset: 0}} sm={{span:10, offset: 1}} lg={{span:8, offset: 2}}>
@@ -64,6 +78,10 @@ const Home = () => {
                             </Col>
                         </Row>
                     </div>
+                </Col>
+                <Col md={12} className="d-none d-md-block">
+                    <img style={styles.drawings_left} src={drawings_left}></img>
+                    <img style={styles.drawings_right} src={drawings_right}></img>
                 </Col>
             </Row>
         );

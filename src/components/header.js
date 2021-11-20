@@ -41,7 +41,7 @@ const Header = () => {
                 left: '0'
             },
             headerLink:{
-                fontSize: medium ? '14px' : '22px',
+                fontSize: medium ? '16px' : '22px',
                 textDecoration: 'none',
                 color: STYLES_COMMON.colors.blancoHielo,
                 fontFamily: 'ff-providence-sans-web-pro,sans-serif',
