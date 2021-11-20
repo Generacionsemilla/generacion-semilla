@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const ProductItem = ({product_name}) => {
+const ProductItem = ({product}) => {
     return (
         <div>
-            <h3>{product_name}</h3>
-            <Link to={'/products/'+product_name}>{product_name}</Link>
+            <h3>{product.name}</h3>
+            <Link to={'/products/'+product.name}>{product.name}</Link>
+            <p >{product.description}</p>
         </div>
     )
 };

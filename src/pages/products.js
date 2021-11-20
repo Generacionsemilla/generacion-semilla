@@ -6,7 +6,7 @@ const Products = () => {
     return (
         <div>Products page
             {PRODUCTS.map( (p,i) => {
-                return <ProductItem product_name={p.name}/>
+                return <ProductItem product={p}/>
             })}
         </div>
 
