@@ -11,20 +11,21 @@ import {useMediaQuery} from "react-responsive";
 const Home = () => {
     const { t } = useTranslation();
 
-    const medium = useMediaQuery({ query: '(max-width: 992px)' });
+    const largeTop = useMediaQuery({ query: '(max-width: 992px)' });
+    const xlargeMin = useMediaQuery({ query: '(min-width: 1200px)' });
 
     const styles = {
         mainRow:{
             minHeight: '500px',
-            fontSize: medium ? '12px' : '16px',
+            fontSize: largeTop ? '12px' : '16px',
             letterSpacing: '3px'
         },
         logo:{
             width: '100%'
         },
         button:{
-            width: medium ? '110px' :'138px',
-            height: medium ? '28px' :'38px',
+            width: largeTop ? '110px' :'138px',
+            height: largeTop ? '28px' :'38px',
             borderRadius: '6px',
             borderColor: STYLES_COMMON.colors.tusaturado,
             backgroundColor: STYLES_COMMON.colors.tusaturado,
@@ -34,7 +35,7 @@ const Home = () => {
             fontStyle: 'normal',
             lineHeight: '2',
             letterSpacing: '3px',
-            fontSize: medium ? '12px' : '16px'
+            fontSize: largeTop ? '12px' : '16px'
         },
         logoPhrase: {
             fontFamily: 'ff-providence-sans-web-pro,sans-serif',
@@ -49,16 +50,16 @@ const Home = () => {
             padding: '40px'
         },
         drawings_right:{
-            maxWidth: '30%',
+            maxWidth: xlargeMin ? '25%' :'32%',
             position: 'absolute',
             right: '0',
-            top: '50%'
+            top: '40%'
         },
         drawings_left:{
-            maxWidth: '30%',
+            maxWidth: xlargeMin ? '25%' :'32%',
             position: 'absolute',
             left: '-10%',
-            top: '50%'
+            top: '42%'
         }
 
     }
@@ -79,7 +80,7 @@ const Home = () => {
                         </Row>
                     </div>
                 </Col>
-                <Col md={12} className="d-none d-md-block">
+                <Col md={12} className={'d-none d-md-block'}>
                     <img style={styles.drawings_left} src={drawings_left}></img>
                     <img style={styles.drawings_right} src={drawings_right}></img>
                 </Col>
