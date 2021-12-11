@@ -4,8 +4,8 @@ import {Button, Col, Container, Row} from "react-bootstrap";
 import logo from '../assets/home/mobile/logo.png'
 import {STYLES_COMMON} from "../assets/styles_common";
 import central_full from "../assets/home/desktop/central_full.png";
-import drawings_right from "../assets/home/desktop/drawings_right.svg";
-import drawings_left from "../assets/home/desktop/drawings_left.svg";
+import drawings_right from "../assets/home/desktop/drawings_right.png";
+import drawings_left from "../assets/home/desktop/drawings_left.png";
 import {useMediaQuery} from "react-responsive";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -20,7 +20,7 @@ const Home = () => {
 
     const styles = {
         mainRow:{
-            minHeight: '600px',
+            minHeight: xlargeMin? '600px' : '500px',
             fontSize: largeTop ? '12px' : '16px',
             letterSpacing: '3px',
             marginTop: '50px'
@@ -49,19 +49,19 @@ const Home = () => {
             fontFamily: 'ff-providence-sans-web-pro,sans-serif',
             fontWeight: '700',
             fontStyle: 'normal',
-            marginTop: xxlargeMin ? '-10%' : '-12%'
+            marginTop: xlargeMin ? '-10%' : '-12%'
         },
         drawings_right:{
-            maxWidth: xlargeMin ? '25%' :'32%',
+            maxWidth: xlargeMin ? '450px' : largeTop ? '280px' : '350px',
             position: 'absolute',
-            right: '0',
-            top: '40%'
+            right: '30px',
+            top: xlargeMin? '35%' : '40%'
         },
         drawings_left:{
-            maxWidth: xlargeMin ? '25%' :'32%',
+            maxWidth:  xlargeMin ? '400px' : largeTop ? '280px' : '320px',
             position: 'absolute',
-            left: '-10%',
-            top: '42%'
+            left: '30px',
+            top: largeTop ? '50%' : '55%'
         }
 
     }
@@ -72,7 +72,7 @@ const Home = () => {
                 <Col xs={{span:10, offset: 1}} >
                     <div >
                         <Row >
-                            <Col xs={{span:10, offset: 1}} xxl={{span:8, offset: 2}} >
+                            <Col xs={{span:10, offset: 1}} xl={{span:8, offset: 2}} >
                                 <img style={styles.logo} src={central_full} className={'d-none d-md-block'}/>
                                 <img style={styles.logo} src={logo} className={'d-xs-block d-md-none' }/>
                             </Col>

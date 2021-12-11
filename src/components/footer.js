@@ -1,7 +1,7 @@
 import React from 'react';
 import {Col, Row} from "react-bootstrap";
-import background from '../assets/footer/background.svg'
-import background_m from '../assets/footer/background_m.svg'
+import background from '../assets/footer/desktop/background.svg'
+import background_m from '../assets/footer/mobile/background_m.svg'
 import whatsapp from '../assets/footer/whatsapp.png'
 import instagram from '../assets/footer/instagram.png'
 import youtube from '../assets/footer/youtube.png'
@@ -39,6 +39,11 @@ const Footer = () => {
                 minHeight: '100px',
                 alignItems: 'center'
             },
+            logoRow:{
+                minHeight: '100px',
+                alignItems: 'center',
+                marginTop: '-50px'
+            },
             textsRow: {
                 lineHeight: 2,
                 fontSize: mediumTop ? '10px' : '14px',
@@ -60,7 +65,7 @@ const Footer = () => {
                 <a href='#'><img style={styles.footer.icon} src={whatsapp} /></a>
               </Col>
             </Row>
-            <Row className={'text-center'} style={styles.footer.rows}>
+            <Row className={'text-center'} style={styles.footer.logoRow}>
               <Col>
                   <img style={styles.footer.logo} src={logo} />
               </Col>
@@ -76,11 +81,13 @@ const Footer = () => {
                 </Col>
             </Row>
             <Row className={'text-center'} style={styles.footer.textsRow}>
-                <Col>Envíos a todo el país</Col>
-                <Col></Col>
-                <Col>©Generación semilla, 2021</Col>
-                <Col></Col>
-                <Col>Caseros, Gran Buenos aires</Col>
+                <Col xs={12} md={{span:10, offset:1}}>
+                    <Row className={'text-center'} >
+                        <Col>Envíos a todo el país</Col>
+                        <Col>©Generación semilla, 2021</Col>
+                        <Col>Caseros, Gran Buenos aires</Col>
+                    </Row>
+                </Col>
             </Row>
         </Row>
       </footer>

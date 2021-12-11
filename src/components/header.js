@@ -8,7 +8,7 @@ import hamburger from '../assets/header/mobile/hamburger.svg'
 import menu_bar_m from '../assets/header/mobile/menu_bar_m.svg'
 import menu_bar_d from '../assets/header/desktop/menu_bar_d.svg'
 import {STYLES_COMMON} from "../assets/styles_common";
-
+import menu_back from '../assets/header/mobile/menu_back_m.svg'
 
 const Header = () => {
     const [menuMOpen, setMenuMOpen] = useState(false);
@@ -67,17 +67,31 @@ const Header = () => {
                 display: 'block',
                 backgroundColor: 'transparent',
                 border: 'none',
-                color: 'white'
+                color: 'white',
+                zIndex: '3',
+                position: 'absolute'
             },
             headerLink:{
-                fontSize: '30px',
+                fontSize: '20px',
                 textDecoration: 'none',
                 color: STYLES_COMMON.colors.blancoHielo,
                 fontFamily: 'ff-providence-sans-web-pro,sans-serif',
                 fontWeight: '700',
                 fontStyle: 'normal'
             },
-            linksDiv: {
+            headerCol:{
+                lineHeight:2
+            },
+            collapse: {
+                backgroundImage: `url(${menu_back})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                width: '250px',
+                height: '275px',
+                position: 'absolute',
+                zIndex: '2',
+                top: '0',
+                left: '0'
             }
         }
 
@@ -85,34 +99,35 @@ const Header = () => {
     const { t } = useTranslation();
     return (
         <header>
+            <Collapse in={menuMOpen} style={styles.header_m.collapse}>
+                <div id="m-movil" >
+                    <Row style={{marginTop: '50px'}}>
+                        <Col xs={{span:6, offset: 1}} style={styles.header_m.headerCol}>
+                            <Link to="/products" style={styles.header_m.headerLink} className={'ml-4'}>{t('header.products')}</Link>
+                        </Col>
+                        <Col xs={{span:6, offset: 2}} style={styles.header_m.headerCol}>
+                            <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noreferrer" style={styles.header_m.headerLink}>{t('header.store')}</a>
+                        </Col>
+                        <Col xs={{span:6, offset: 3}} style={styles.header_m.headerCol}>
+                            <Link to="/about" style={styles.header_m.headerLink}>{t('header.about')}</Link>
+                        </Col>
+                        <Col xs={{span:6, offset: 2}} style={styles.header_m.headerCol}>
+                            <Link to="/contact" style={styles.header_m.headerLink}>{t('header.contact')}</Link>
+                        </Col>
+                        <Col xs={{span:6, offset: 1}} style={styles.header_m.headerCol}>
+                            <Link to="/" style={styles.header_m.headerLink}>{t('header.home')}</Link>
+                        </Col>
+                    </Row>
+                </div>
+            </Collapse>
             <Row style={styles.header_d.header}>
                 <Col xs={2} className={'d-md-none'}>
                     <Button style={styles.header_m.hamburger}
                             onClick={() => setMenuMOpen(!menuMOpen)}
                             aria-controls="m-movil"
                             aria-expanded={menuMOpen}><img src={hamburger}></img></Button>
-                    <Collapse in={menuMOpen}>
-                        <div id="m-movil" style={styles.header_m.linksDiv}>
-                            <Row>
-                                <Col xs={12}>
-                                    <Link to="/" style={styles.header_m.headerLink}>{t('header.home')}</Link>
-                                </Col>
-                                <Col xs={12} >
-                                    <Link to="/products" style={styles.header_m.headerLink} className={'ml-4'}>{t('header.products')}</Link>
-                                </Col>
-                                <Col xs={12}>
-                                    <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noreferrer" style={styles.header_m.headerLink}>{t('header.store')}</a>
-                                </Col>
-                                <Col xs={12}>
-                                    <Link to="/about" style={styles.header_m.headerLink}>{t('header.about')}</Link>
-                                </Col>
-                                <Col xs={12}>
-                                    <Link to="/contact" style={styles.header_m.headerLink}>{t('header.contact')}</Link>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Collapse>
                 </Col>
+
                 <Col xs={12} style={styles.header_d.headerBackground} >
                     <svg xmlns="http://www.w3.org/2000/svg" style={styles.header_d.headerBackgroundIcon} xmlnsXlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify" viewBox="0 0 375 375" preserveAspectRatio="none" version="1.0"><defs><clipPath id="clip-0"><path d="M 0 0 L 375 0 L 375 256 L 0 256 Z M 0 0 " clipRule="nonzero"/></clipPath><clipPath id="clip-1"><path d="M -51.773438 492.085938 L -507.585938 -152.847656 L 137.351562 -608.660156 L 593.160156 36.277344 Z M -51.773438 492.085938 " clipRule="nonzero"/></clipPath><clipPath id="clip-2"><path d="M -51.773438 492.085938 L -507.585938 -152.847656 L 137.351562 -608.660156 L 593.160156 36.277344 Z M -51.773438 492.085938 " clipRule="nonzero"/></clipPath></defs><g clipPath="url(#clip-0)"><g clipPath="url(#clip-1)"><g clipPath="url(#clip-2)"><path fill="rgb(24.308777%, 36.859131%, 44.709778%)" d="M 376.25 -43.488281 C 381.730469 255.722656 -75.101562 269.703125 -158.136719 249.089844 C -316 210.183594 -302.453125 -16.40625 -174.449219 -47.105469 C -81.535156 -69.449219 7.660156 -68.855469 -8.953125 -263.679688 C -22.703125 -425.714844 108.851562 -512.695312 177.550781 -477.886719 C 277.972656 -427.203125 372.3125 -254.042969 376.25 -43.488281 Z M 376.25 -43.488281 " fillOpacity="1" fillRule="nonzero"/></g></g></g></svg>
                     <img style={styles.header_d.headerBackgroundFull} src={menu_bar_d} className={'d-none d-md-block'}/>
