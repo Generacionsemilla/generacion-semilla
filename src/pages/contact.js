@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from "axios";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import {Container} from "react-bootstrap";
 
 const submitForm = (e) => {
     e.preventDefault();
@@ -20,7 +23,8 @@ const submitForm = (e) => {
 
 const Contact = () => {
     return (
-        <div>
+        <Container fluid>
+            <Header></Header>
             <h3>this is the Contact page</h3>
             <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm}>
                 from <input type="text" id="from_name" name="from_from"/>
@@ -28,7 +32,8 @@ const Contact = () => {
                 message <input type="textarea" id="message" name="message"/>
                 <button type={"submit"}>Submit</button>
             </form>
-        </div>
+            <Footer></Footer>
+        </Container>
     );
 };
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import {PRODUCTS} from "../model/product";
-import {Col, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import {STYLES_COMMON} from "../assets/styles_common";
 import {useMediaQuery} from "react-responsive";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const ProductDetail = () => {
 
@@ -48,7 +50,8 @@ const ProductDetail = () => {
     }
 
     return (
-        <div>
+        <Container fluid>
+            <Header></Header>
             <Row>
                 <Col md={{span: 2, offset: 5}} xs={{span: 4, offset: 4}} >
                     <h3 style={styles.title} className={'text-center d-none d-md-block'}>{product.title.toUpperCase()}</h3>
@@ -77,7 +80,8 @@ const ProductDetail = () => {
                     <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.png').default}></img>
                 </Col>
             </Row>
-        </div>
+            <Footer></Footer>
+        </Container>
     );
 
 };

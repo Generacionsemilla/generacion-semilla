@@ -1,8 +1,10 @@
 import React from 'react';
 import {PRODUCTS} from '../model/product'
 import ProductItem from "../components/product_item";
-import {Col, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import {STYLES_COMMON} from "../assets/styles_common";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const Products = () => {
 
@@ -19,7 +21,8 @@ const Products = () => {
     }
 
     return (
-        <div>
+        <Container fluid>
+            <Header></Header>
             <Row>
                 <Col xs={12} className={'text-center'}>
                     <h3 style={styles.title}>NUESTROS PRODUCTOS</h3>
@@ -30,9 +33,8 @@ const Products = () => {
                     return <ProductItem product={p}/>
                 })}
             </Row>
-        </div>
-
-
+            <Footer></Footer>
+        </Container>
 
     );
 };

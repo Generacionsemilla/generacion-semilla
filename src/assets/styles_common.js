@@ -10,11 +10,11 @@ export const STYLES_COMMON = {
         blancoHielo: '#F6F5F1'
     },
     breakpoints: {
-        sm: '576px',
-        md: '768px',
-        lg: '992px',
-        xl: '1200px',
-        xxl: '1400px'
+        sm: '575px',
+        md: '767px',
+        lg: '991px',
+        xl: '1199px',
+        xxl: '1399px'
     }
 
 };

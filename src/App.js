@@ -4,19 +4,15 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import i18n from "./translations/i18n";
 import About from "./pages/about";
-import Footer from "./components/footer";
-import Header from "./components/header";
 import Products from "./pages/products";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from "react-bootstrap";
 import ProductDetail from "./pages/product_detail";
 
 function App() {
 
     return (
         <Router>
-            <Container fluid>
-                <Header></Header>
+
                 <div className="App">
                     <Switch>
                         <Route exact path='/' component={Home}></Route>
@@ -26,8 +22,7 @@ function App() {
                         <Route exact path='/about' component={About}></Route>
                     </Switch>
                 </div>
-                <Footer></Footer>
-            </Container>
+
         </Router>
 
     );
