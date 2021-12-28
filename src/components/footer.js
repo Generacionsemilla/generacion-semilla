@@ -42,7 +42,8 @@ const Footer = () => {
             logoRow:{
                 minHeight: '100px',
                 alignItems: 'center',
-                marginTop: '-50px'
+                marginTop: '-50px',
+                zIndex: 0
             },
             textsRow: {
                 lineHeight: 2,
@@ -53,6 +54,10 @@ const Footer = () => {
                 fontFamily: 'filson-pro,sans-serif',
                 fontWeight: '400',
                 fontStyle: 'normal'
+            },
+            link:{
+                height: largeTop? '50px' : '60px',
+                width: largeTop? '50px' : '60px'
             }
         }
     }
@@ -62,7 +67,7 @@ const Footer = () => {
         <Row style={styles.footer.footer}>
             <Row className={'text-center'} style={styles.footer.rows}>
               <Col xs={{span: 2,offset:5}}>
-                <a href='#'><img style={styles.footer.icon} src={whatsapp} /></a>
+                <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
               </Col>
             </Row>
             <Row className={'text-center'} style={styles.footer.logoRow}>
@@ -73,10 +78,10 @@ const Footer = () => {
             <Row className={'text-center'} style={styles.footer.rows}>
                 <Col xs={{span:6, offset:3}}>
                     <Row className={'text-center'} >
-                        <Col><a href='#'><img style={styles.footer.icon} src={youtube} /></a></Col>
-                        <Col><a href='#'><img style={styles.footer.icon} src={instagram} /></a></Col>
-                        <Col><a href='#'><img style={styles.footer.icon} src={facebook} /></a></Col>
-                        <Col><a href='#'><img style={styles.footer.icon} src={linkedin} /></a></Col>
+                        <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
+                        <Col><a href='https://www.instagram.com/generacionsemilla/' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={instagram} /></a></Col>
+                        <Col><a href='https://www.facebook.com/generacionsemillaeditorial' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={facebook} /></a></Col>
+                        <Col><a href='https://www.linkedin.com/company/generaci%C3%B3n-semilla' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={linkedin} /></a></Col>
                     </Row>
                 </Col>
             </Row>

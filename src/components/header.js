@@ -106,7 +106,7 @@ const Header = () => {
                             <Link to="/products" style={styles.header_m.headerLink} className={'ml-4'}>{t('header.products')}</Link>
                         </Col>
                         <Col xs={{span:6, offset: 2}} style={styles.header_m.headerCol}>
-                            <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noreferrer" style={styles.header_m.headerLink}>{t('header.store')}</a>
+                            <a href="https://editorialgeneracionsemilla.mercadoshops.com.ar/" target="_blank" rel="noreferrer" style={styles.header_m.headerLink}>{t('header.store')}</a>
                         </Col>
                         <Col xs={{span:6, offset: 3}} style={styles.header_m.headerCol}>
                             <Link to="/about" style={styles.header_m.headerLink}>{t('header.about')}</Link>
@@ -146,7 +146,7 @@ const Header = () => {
                             <Link to="/products" style={styles.header_d.headerLink}>{t('header.products')}</Link>
                         </Col>
                         <Col>
-                            <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noreferrer" style={styles.header_d.headerLink}>{t('header.store')}</a>
+                            <a href="https://editorialgeneracionsemilla.mercadoshops.com.ar/" target="_blank" rel="noreferrer" style={styles.header_d.headerLink}>{t('header.store')}</a>
                         </Col>
                         <Col>
                             <Link to="/about" style={styles.header_d.headerLink}>{t('header.about')}</Link>

@@ -16,23 +16,27 @@ const Products = () => {
             color: STYLES_COMMON.colors.azulita
         },
         productsRow:{
-            margin: '20px 0 100px',
+            margin: '20px 0 200px',
+            minHeight: '500px'
         }
     }
 
     return (
         <Container fluid>
             <Header></Header>
-            <Row>
+            <Row style={styles.productsRow}>
                 <Col xs={12} className={'text-center'}>
                     <h3 style={styles.title}>NUESTROS PRODUCTOS</h3>
                 </Col>
+                <Col xs={12}>
+                    <Row className={'text-center'}>
+                        {PRODUCTS.map( (p,i) => {
+                            return <ProductItem product={p}/>
+                        })}
+                    </Row>
+                </Col>
             </Row>
-            <Row style={styles.productsRow} className={'text-center'}>
-                {PRODUCTS.map( (p,i) => {
-                    return <ProductItem product={p}/>
-                })}
-            </Row>
+
             <Footer></Footer>
         </Container>
 
