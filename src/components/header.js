@@ -4,11 +4,10 @@ import {useTranslation} from "react-i18next";
 import {Row, Col, Button, Collapse} from "react-bootstrap";
 import {useMediaQuery} from "react-responsive";
 import icon_desktop from '../assets/header/desktop/icon_desktop.png'
-import hamburger from '../assets/header/mobile/hamburger.svg'
-import menu_bar_m from '../assets/header/mobile/menu_bar_m.svg'
+/*import menu_back_full from '../assets/header/mobile/menu_back_full.svg'*/
 import menu_bar_d from '../assets/header/desktop/menu_bar_d.svg'
 import {STYLES_COMMON} from "../assets/styles_common";
-import menu_back from '../assets/header/mobile/menu_back_m.svg'
+import menu_back from '../assets/header/mobile/menu_back_m.png'
 
 const Header = () => {
     const [menuMOpen, setMenuMOpen] = useState(false);
@@ -24,7 +23,7 @@ const Header = () => {
                 width: '100%'
             },
             homeIconLink:{
-                width: largeTop ? '60px' : '70px',
+                width: xxlargeTop ? '60px' : '70px',
                 margin: '15px 0px 0px 20px',
                 display: 'block'
             },
@@ -39,15 +38,17 @@ const Header = () => {
             headerBackgroundFull:{
                 position: "absolute",
                 zIndex: '-2',
-                top: mediumTop? '0' : largeTop ? '-10px' :  xxlargeTop ? '-30px' : '-70px'
+                top: '0',
+                width: '100%',
+                maxHeight: '120px'
             },
             headerBackgroundIcon:{
                 position: "absolute",
                 zIndex: '-1',
                 top: '0',
                 left: '0',
-                width: mediumTop ? '140px' : xlargeTop ? '180px' : xxlargeTop ? '190px' : '200px',
-                height: mediumTop ? '140px' : xlargeTop ? '180px' :  xxlargeTop ? '190px' :'200px'
+                width: mediumTop ? '140px' : xxlargeTop ? '180px' : '200px',
+                height: mediumTop ? '140px' : xxlargeTop ? '180px' : '200px'
             },
             headerLink:{
                 fontSize: largeTop ? '16px' : '22px',
@@ -67,12 +68,12 @@ const Header = () => {
                 display: 'block',
                 backgroundColor: 'transparent',
                 border: 'none',
-                color: 'white',
+                color: menuMOpen ? 'gray' : 'white',
                 zIndex: '3',
                 position: 'absolute'
             },
             headerLink:{
-                fontSize: '20px',
+                fontSize: '16px',
                 textDecoration: 'none',
                 color: STYLES_COMMON.colors.blancoHielo,
                 fontFamily: 'ff-providence-sans-web-pro,sans-serif',
@@ -83,15 +84,19 @@ const Header = () => {
                 lineHeight:2
             },
             collapse: {
-                backgroundImage: `url(${menu_back})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                width: '250px',
+                width: '205px',
                 height: '275px',
                 position: 'absolute',
-                zIndex: '2',
+                zIndex: '1',
                 top: '0',
                 left: '0'
+            },
+            menuBack: {
+                maxWidth: '205px',
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                zIndex: -'1'
             }
         }
 
@@ -101,7 +106,8 @@ const Header = () => {
         <header>
             <Collapse in={menuMOpen} style={styles.header_m.collapse}>
                 <div id="m-movil" >
-                    <Row style={{marginTop: '50px'}}>
+                    <img src={menu_back} style={styles.header_m.menuBack}/>
+                    <Row style={{marginTop: '65px', marginLeft: '20px'}}>
                         <Col xs={{span:6, offset: 1}} style={styles.header_m.headerCol}>
                             <Link to="/products" style={styles.header_m.headerLink} className={'ml-4'}>{t('header.products')}</Link>
                         </Col>
@@ -125,13 +131,17 @@ const Header = () => {
                     <Button style={styles.header_m.hamburger}
                             onClick={() => setMenuMOpen(!menuMOpen)}
                             aria-controls="m-movil"
-                            aria-expanded={menuMOpen}><img src={hamburger}></img></Button>
+                            aria-expanded={menuMOpen}>
+                        <svg height="32px" id="Layer_1" style={{enableBackground: 'new 0 0 32 32'}} version="1.1" viewBox="0 0 32 32" width="32px"
+                             xmlSpace={'preserve'} xmlns={'http://www.w3.org/2000/svg'} xmlnsXlink={'http://www.w3.org/1999/xlink'}>
+                            <path fill={menuMOpen ? '#8e8e8e' : '#F6F5F1'} d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+                        </Button>
                 </Col>
 
                 <Col xs={12} style={styles.header_d.headerBackground} >
                     <svg xmlns="http://www.w3.org/2000/svg" style={styles.header_d.headerBackgroundIcon} xmlnsXlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify" viewBox="0 0 375 375" preserveAspectRatio="none" version="1.0"><defs><clipPath id="clip-0"><path d="M 0 0 L 375 0 L 375 256 L 0 256 Z M 0 0 " clipRule="nonzero"/></clipPath><clipPath id="clip-1"><path d="M -51.773438 492.085938 L -507.585938 -152.847656 L 137.351562 -608.660156 L 593.160156 36.277344 Z M -51.773438 492.085938 " clipRule="nonzero"/></clipPath><clipPath id="clip-2"><path d="M -51.773438 492.085938 L -507.585938 -152.847656 L 137.351562 -608.660156 L 593.160156 36.277344 Z M -51.773438 492.085938 " clipRule="nonzero"/></clipPath></defs><g clipPath="url(#clip-0)"><g clipPath="url(#clip-1)"><g clipPath="url(#clip-2)"><path fill="rgb(24.308777%, 36.859131%, 44.709778%)" d="M 376.25 -43.488281 C 381.730469 255.722656 -75.101562 269.703125 -158.136719 249.089844 C -316 210.183594 -302.453125 -16.40625 -174.449219 -47.105469 C -81.535156 -69.449219 7.660156 -68.855469 -8.953125 -263.679688 C -22.703125 -425.714844 108.851562 -512.695312 177.550781 -477.886719 C 277.972656 -427.203125 372.3125 -254.042969 376.25 -43.488281 Z M 376.25 -43.488281 " fillOpacity="1" fillRule="nonzero"/></g></g></g></svg>
                     <img style={styles.header_d.headerBackgroundFull} src={menu_bar_d} className={'d-none d-md-block'}/>
-                    <img style={styles.header_d.headerBackgroundFull} src={menu_bar_m} className={'d-xs-block d-md-none'}/>
+                    {/*<img style={styles.header_d.headerBackgroundFull} src={menu_back_full} className={'d-xs-block d-md-none'}/>*/}
                 </Col>
 
                 <Col md={2} xl={1} className={'d-none d-md-block'}>

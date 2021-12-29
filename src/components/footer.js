@@ -27,7 +27,7 @@ const Footer = () => {
 
             },
             icon:{
-                maxWidth: largeTop? '50px' : '60px',
+                maxWidth: mediumTop ? '30px' : largeTop ? '50px' : '60px',
                 width: '100%'
             },
             logo:{
@@ -42,7 +42,7 @@ const Footer = () => {
             logoRow:{
                 minHeight: '100px',
                 alignItems: 'center',
-                marginTop: '-50px',
+                marginTop: mediumTop ? '' : '-50px',
                 zIndex: 0
             },
             textsRow: {
@@ -65,18 +65,23 @@ const Footer = () => {
   return (
       <footer>
         <Row style={styles.footer.footer}>
+            <Row className={'text-center d-xs-block d-md-none'}  style={styles.footer.logoRow}>
+                <Col>
+                    <img style={styles.footer.logo} src={logo} />
+                </Col>
+            </Row>
             <Row className={'text-center'} style={styles.footer.rows}>
               <Col xs={{span: 2,offset:5}}>
                 <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
               </Col>
             </Row>
-            <Row className={'text-center'} style={styles.footer.logoRow}>
+            <Row className={'text-center d-none d-md-block'}  style={styles.footer.logoRow}>
               <Col>
                   <img style={styles.footer.logo} src={logo} />
               </Col>
             </Row>
             <Row className={'text-center'} style={styles.footer.rows}>
-                <Col xs={{span:6, offset:3}}>
+                <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
                     <Row className={'text-center'} >
                         <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
                         <Col><a href='https://www.instagram.com/generacionsemilla/' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={instagram} /></a></Col>
