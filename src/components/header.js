@@ -9,7 +9,7 @@ import menu_bar_d from '../assets/header/desktop/menu_bar_d.svg'
 import {STYLES_COMMON} from "../assets/styles_common";
 import menu_back from '../assets/header/mobile/menu_back_m.png'
 
-const Header = () => {
+const Header = ({isHome}) => {
     const [menuMOpen, setMenuMOpen] = useState(false);
 
     const xxlargeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.xxl+')' });
@@ -120,9 +120,10 @@ const Header = () => {
                         <Col xs={{span:6, offset: 2}} style={styles.header_m.headerCol}>
                             <Link to="/contact" style={styles.header_m.headerLink}>{t('header.contact')}</Link>
                         </Col>
-                        <Col xs={{span:6, offset: 1}} style={styles.header_m.headerCol}>
+                        {!isHome ?  <Col xs={{span:6, offset: 1}} style={styles.header_m.headerCol}>
                             <Link to="/" style={styles.header_m.headerLink}>{t('header.home')}</Link>
-                        </Col>
+                        </Col> : ''}
+
                     </Row>
                 </div>
             </Collapse>

@@ -20,7 +20,7 @@ const Home = () => {
 
     const styles = {
         mainRow:{
-            minHeight: xlargeMin? '600px' : '500px',
+            minHeight: '500px',
             fontSize: largeTop ? '12px' : '16px',
             letterSpacing: '3px',
             marginTop: '50px'
@@ -65,7 +65,7 @@ const Home = () => {
     }
     return (
         <Container fluid>
-            <Header></Header>
+            <Header isHome={true}></Header>
             <Row style={styles.mainRow} className={'text-center'}>
                 <Col xs={2} className={'d-none d-md-block'}>
                     <img style={styles.drawings_left} src={drawings_left}></img>
@@ -83,7 +83,7 @@ const Home = () => {
                     <img style={styles.drawings_right} src={drawings_right}></img>
                 </Col>
             </Row>
-            <Footer></Footer>
+            <Footer socials={true}></Footer>
         </Container>
         );
 };

@@ -28,7 +28,7 @@ const Products = () => {
                 <Col xs={12} className={'text-center'}>
                     <h3 style={styles.title}>NUESTROS PRODUCTOS</h3>
                 </Col>
-                <Col xs={12}>
+                <Col xs={{span: 10, offset: 1}}>
                     <Row className={'text-center'}>
                         {PRODUCTS.map( (p,i) => {
                             return <ProductItem product={p}/>

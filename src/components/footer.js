@@ -11,7 +11,7 @@ import logo from '../assets/footer/logo_reducido.png'
 import {STYLES_COMMON} from "../assets/styles_common";
 import {useMediaQuery} from "react-responsive";
 
-const Footer = () => {
+const Footer = ({showSocials}) => {
 
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
@@ -80,16 +80,19 @@ const Footer = () => {
                   <img style={styles.footer.logo} src={logo} />
               </Col>
             </Row>
-            <Row className={'text-center'} style={styles.footer.rows}>
-                <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
-                    <Row className={'text-center'} >
-                        <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
-                        <Col><a href='https://www.instagram.com/generacionsemilla/' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={instagram} /></a></Col>
-                        <Col><a href='https://www.facebook.com/generacionsemillaeditorial' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={facebook} /></a></Col>
-                        <Col><a href='https://www.linkedin.com/company/generaci%C3%B3n-semilla' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={linkedin} /></a></Col>
-                    </Row>
-                </Col>
-            </Row>
+            {showSocials ?
+                    <Row className={'text-center'} style={styles.footer.rows}>
+                        <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
+                            <Row className={'text-center'} >
+                                <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
+                                <Col><a href='https://www.instagram.com/generacionsemilla/' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={instagram} /></a></Col>
+                                <Col><a href='https://www.facebook.com/generacionsemillaeditorial' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={facebook} /></a></Col>
+                                <Col><a href='https://www.linkedin.com/company/generaci%C3%B3n-semilla' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={linkedin} /></a></Col>
+                            </Row>
+                        </Col>
+                    </Row> : ''
+            }
+
             <Row className={'text-center'} style={styles.footer.textsRow}>
                 <Col xs={12} md={{span:10, offset:1}}>
                     <Row className={'text-center'} >

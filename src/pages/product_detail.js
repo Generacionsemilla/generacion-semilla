@@ -39,13 +39,18 @@ const ProductDetail = () => {
             fontFamily: 'ff-providence-sans-web-pro,sans-serif',
             fontWeight: '700',
             fontStyle: 'normal',
-            lineHeight: mediumTop ? '2' : '3',
-            letterSpacing: '10px',
-            width: mediumTop ? '160px' : '280px',
-            height: mediumTop ? '40px' : '68px',
+            lineHeight: mediumTop ? '2' : '2.5',
+            letterSpacing: '6px',
+            width: mediumTop ? '160px' : '240px',
+            height: mediumTop ? '40px' : '60px',
             fontSize: mediumTop ? '16px' : '22px',
             textDecoration: 'none',
-            color: STYLES_COMMON.colors.blancoHielo
+            color: STYLES_COMMON.colors.blancoHielo,
+            marginTop: '50px'
+        },
+        secondImageCol:{
+            zIndex: '-1',
+            marginBottom: '-17%'
         }
     }
 
@@ -54,30 +59,30 @@ const ProductDetail = () => {
             <Header></Header>
             <Row>
                 <Col md={{span: 2, offset: 5}} xs={{span: 4, offset: 4}} >
-                    <h3 style={styles.title} className={'text-center d-none d-md-block'}>{product.title.toUpperCase()}</h3>
+                    <h3 style={styles.title} className={'text-center d-none d-md-block mb-5'}>{product.title.toUpperCase()}</h3>
                     <img style={styles.icons}
                          src={require('../assets/products/icons/' + product.name + '.png').default}></img>
                 </Col>
             </Row>
             <Row className={'text-center mt-5'}>
-                <Col xs={12}>
+                <Col xs={{span: 10, offset: 1}}>
                     <p>{product.upper_text}</p>
                 </Col>
             </Row>
             <Row className={'mt-5'}>
                 <Col xs={12} className={'p-0'}>
-                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_1.png').default}></img>
+                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_1.jpg').default}></img>
                 </Col>
             </Row>
             <Row className={'text-center mt-5'}>
-                <Col xs={12}>
+                <Col xs={{span: 10, offset: 1}}>
                     <p>{product.lower_text}</p>
                     <a href={product.link} target="_blank" rel="noreferrer" style={styles.button} className={'btn btn-sm'}>Comprar</a>
                 </Col>
             </Row>
             <Row className={'mt-5 px-0'}>
-                <Col xs={12} className={'p-0'}>
-                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.png').default}></img>
+                <Col xs={12} className={'p-0'} style={styles.secondImageCol}>
+                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.jpg').default}></img>
                 </Col>
             </Row>
             <Footer></Footer>
