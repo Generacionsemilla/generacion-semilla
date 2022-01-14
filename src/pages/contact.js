@@ -2,7 +2,8 @@ import React from 'react';
 import axios from "axios";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import {Container} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
+import {STYLES_COMMON} from "../assets/styles_common";
 
 const submitForm = (e) => {
     e.preventDefault();
@@ -22,16 +23,47 @@ const submitForm = (e) => {
 };
 
 const Contact = () => {
+    const inputFieldStyle = `
+               input::placeholder, textarea::placeholder{
+                       opacity: 1
+               }`
+
+    const styles = {
+        input:{
+            color: STYLES_COMMON.colors.tusaturado,
+            width: '100%',
+            opacity: '1'
+        },
+        text_area:{
+            resize: 'none'
+        }
+    }
+
     return (
+
         <Container fluid>
+            <style>
+                {inputFieldStyle}
+            </style>
             <Header></Header>
-            <h3>this is the Contact page</h3>
-            <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm}>
-                from <input type="text" id="from_name" name="from_from"/>
-                email <input type="text" id="from_email" name="from_email"/>
-                message <input type="textarea" id="message" name="message"/>
-                <button type={"submit"}>Submit</button>
+            <Row className={'text-center'}>
+                <h3>CONTACTO</h3>
+                <h4>Formulario de Contacto</h4>
+            </Row>
+            <Row className={'text-center'}>
+                <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm}>
+                    <Col xs={{span: 4, offset:4}} className={'mt-5'}>
+                        <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={styles.input}/>
+                    </Col>
+                    <Col xs={{span: 4, offset:4}} className={'mt-5'}>
+                        <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={styles.input}/>
+                    </Col>
+                    <Col xs={{span: 4, offset:4}} className={'mt-5'}>
+                        <textarea style={{...styles.input, ...styles.text_area}} rows={6} id="message" name="message" placeholder={'Mensaje'}/>
+                    </Col>
+                <button className={'btn btn-sm'} type={"submit"}>Enviar</button>
             </form>
+            </Row>
             <Footer></Footer>
         </Container>
     );
