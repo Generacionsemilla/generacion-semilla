@@ -4,6 +4,12 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import {Col, Container, Row} from "react-bootstrap";
 import {STYLES_COMMON} from "../assets/styles_common";
+import top from "../assets/contact/top.svg";
+import middle from "../assets/contact/middle.svg";
+import bottom from "../assets/contact/bottom.svg";
+import background_m from "../assets/footer/mobile/background_m.svg";
+import background from "../assets/footer/desktop/background.svg";
+import {useMediaQuery} from "react-responsive";
 
 const submitForm = (e) => {
     e.preventDefault();
@@ -28,15 +34,72 @@ const Contact = () => {
                        opacity: 1
                }`
 
+    const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
+
     const styles = {
         input:{
             color: STYLES_COMMON.colors.tusaturado,
             width: '100%',
-            opacity: '1'
+            opacity: '1',
+            padding: '10px'
         },
         text_area:{
             resize: 'none'
-        }
+        },
+        input_container_div:{
+            padding: '20px 0',
+            display: 'flex',
+            alignItems: 'center'
+        },
+        image_container_div:{
+            padding: 0,
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'baseline',
+        },
+        top_image: {
+            maxWidth: '120px',
+            marginTop: mediumTop ? '10px': '0'
+        },
+        test:{
+            backgroundImage: `url(${middle})`,
+            backgroundSize: '50px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionX: '50%',
+            backgroundPositionY: '20%'
+        },
+        textarea_container_div:{
+            padding: '20px 0 0 0',
+            display: 'flex',
+            alignItems: 'center'
+        },
+        bottom_image:{
+            width: mediumTop ? '200px' : '260px',
+            marginLeft: mediumTop ? '35%' : '20%'
+        },
+        button:{
+            borderRadius: '6px',
+            borderColor: STYLES_COMMON.colors.tusaturado,
+            backgroundColor: STYLES_COMMON.colors.tusaturado,
+            filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal',
+            lineHeight: mediumTop ? '2' : '2.5',
+            letterSpacing: '6px',
+            width: mediumTop ? '160px' : '200px',
+            height: mediumTop ? '40px' : '50px',
+            fontSize: mediumTop ? '16px' : '18px',
+            textDecoration: 'none',
+            color: STYLES_COMMON.colors.blancoHielo,
+            marginTop: '50px'
+        },
+        test2:{
+            backgroundImage: `url(${bottom})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionX: '70%',
+            minHeight: '200px'
+        },
     }
 
     return (
@@ -51,17 +114,39 @@ const Contact = () => {
                 <h4>Formulario de Contacto</h4>
             </Row>
             <Row className={'text-center'}>
-                <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm}>
-                    <Col xs={{span: 4, offset:4}} className={'mt-5'}>
-                        <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={styles.input}/>
+                <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm} style={styles.test}>
+                    <Col xs={{span: 5, offset:3}} className={'mt-5'}>
+                        <Row>
+                            <Col xs={3} style={styles.image_container_div}>
+                                <img src={top} style={styles.top_image}/>
+                            </Col>
+                            <Col xs={9} style={styles.input_container_div}>
+                                <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={styles.input}/>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col xs={{span: 4, offset:4}} className={'mt-5'}>
-                        <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={styles.input}/>
+                    <Col xs={{span: 5, offset:3}} className={''}>
+                        <Row>
+                            <Col xs={3}>
+                            </Col>
+                            <Col xs={9} style={styles.input_container_div}>
+                                <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={styles.input}/>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col xs={{span: 4, offset:4}} className={'mt-5'}>
-                        <textarea style={{...styles.input, ...styles.text_area}} rows={6} id="message" name="message" placeholder={'Mensaje'}/>
+                    <Col xs={{span: 5, offset:3}} className={''}>
+                        <Row>
+                            <Col xs={3}>
+                            </Col>
+                            <Col xs={9} style={styles.textarea_container_div}>
+                                <textarea style={{...styles.input, ...styles.text_area}} rows={12} id="message" name="message" placeholder={'Mensaje'}/>
+                            </Col>
+                        </Row>
                     </Col>
-                <button className={'btn btn-sm'} type={"submit"}>Enviar</button>
+                    {/*<img src={bottom} style={styles.bottom_image}/>*/}
+                    <Col xs={{span: 12}} className={''} style={styles.test2}>
+                        <button className={'btn btn-sm'} type={"submit"} style={styles.button}>Enviar</button>
+                    </Col>
             </form>
             </Row>
             <Footer></Footer>
