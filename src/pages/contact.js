@@ -35,13 +35,15 @@ const Contact = () => {
                }`
 
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
+    const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
 
     const styles = {
         input:{
             color: STYLES_COMMON.colors.tusaturado,
             width: '100%',
             opacity: '1',
-            padding: '10px'
+            padding: '10px',
+            fontSize: mediumTop ? '14px' : 'inherit'
         },
         text_area:{
             resize: 'none'
@@ -59,9 +61,9 @@ const Contact = () => {
         },
         top_image: {
             maxWidth: '120px',
-            marginTop: mediumTop ? '10px': '0'
+            minWidth: '100px'
         },
-        test:{
+        middleBack:{
             backgroundImage: `url(${middle})`,
             backgroundSize: '50px',
             backgroundRepeat: 'no-repeat',
@@ -70,8 +72,7 @@ const Contact = () => {
         },
         textarea_container_div:{
             padding: '20px 0 0 0',
-            display: 'flex',
-            alignItems: 'center'
+            display: 'flex'
         },
         bottom_image:{
             width: mediumTop ? '200px' : '260px',
@@ -87,18 +88,18 @@ const Contact = () => {
             fontStyle: 'normal',
             lineHeight: mediumTop ? '2' : '2.5',
             letterSpacing: '6px',
-            width: mediumTop ? '160px' : '200px',
+            width: mediumTop ? '130px' : '200px',
             height: mediumTop ? '40px' : '50px',
-            fontSize: mediumTop ? '16px' : '18px',
+            fontSize: mediumTop ? '14px' : '18px',
             textDecoration: 'none',
             color: STYLES_COMMON.colors.blancoHielo,
             marginTop: '50px'
         },
-        test2:{
+        bottomBack:{
             backgroundImage: `url(${bottom})`,
             backgroundRepeat: 'no-repeat',
-            backgroundPositionX: '70%',
-            minHeight: '200px'
+            backgroundPositionX: mediumTop ? '85%' : '70%',
+            minHeight: largeTop ? '150px' : '200px'
         },
     }
 
@@ -114,7 +115,7 @@ const Contact = () => {
                 <h4>Formulario de Contacto</h4>
             </Row>
             <Row className={'text-center'}>
-                <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm} style={styles.test}>
+                <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm} style={styles.middleBack}>
                     <Col xs={{span: 5, offset:3}} className={'mt-5'}>
                         <Row>
                             <Col xs={3} style={styles.image_container_div}>
@@ -143,8 +144,7 @@ const Contact = () => {
                             </Col>
                         </Row>
                     </Col>
-                    {/*<img src={bottom} style={styles.bottom_image}/>*/}
-                    <Col xs={{span: 12}} className={''} style={styles.test2}>
+                    <Col xs={{span: 12}} className={''} style={styles.bottomBack}>
                         <button className={'btn btn-sm'} type={"submit"} style={styles.button}>Enviar</button>
                     </Col>
             </form>
