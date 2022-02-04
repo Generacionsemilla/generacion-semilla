@@ -7,8 +7,6 @@ import {STYLES_COMMON} from "../assets/styles_common";
 import top from "../assets/contact/top.svg";
 import middle from "../assets/contact/middle.svg";
 import bottom from "../assets/contact/bottom.svg";
-import background_m from "../assets/footer/mobile/background_m.svg";
-import background from "../assets/footer/desktop/background.svg";
 import {useMediaQuery} from "react-responsive";
 
 const submitForm = (e) => {
@@ -35,7 +33,6 @@ const Contact = () => {
                }`
 
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
-    const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
 
     const styles = {
         input:{
@@ -60,15 +57,15 @@ const Contact = () => {
             alignItems: 'baseline',
         },
         top_image: {
-            maxWidth: '120px',
-            minWidth: '100px'
+            maxWidth: mediumTop ? '100px' : '120px',
+            minWidth: '70px'
         },
         middleBack:{
             backgroundImage: `url(${middle})`,
             backgroundSize: '50px',
             backgroundRepeat: 'no-repeat',
             backgroundPositionX: '50%',
-            backgroundPositionY: '20%'
+            backgroundPositionY: '110px'
         },
         textarea_container_div:{
             padding: '20px 0 0 0',
@@ -98,8 +95,8 @@ const Contact = () => {
         bottomBack:{
             backgroundImage: `url(${bottom})`,
             backgroundRepeat: 'no-repeat',
-            backgroundPositionX: mediumTop ? '85%' : '70%',
-            minHeight: largeTop ? '150px' : '200px'
+            backgroundPositionX: mediumTop ? 'calc(50% + 80px)' : 'calc(50% + 160px)',
+            minHeight: mediumTop ? '150px' : '200px'
         },
     }
 
@@ -114,37 +111,34 @@ const Contact = () => {
                 <h3>CONTACTO</h3>
                 <h4>Formulario de Contacto</h4>
             </Row>
+
             <Row className={'text-center'}>
                 <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm} style={styles.middleBack}>
-                    <Col xs={{span: 5, offset:3}} className={'mt-5'}>
+                    <Col xs={12} className={'mt-5 text-center'}>
                         <Row>
-                            <Col xs={3} style={styles.image_container_div}>
+                            <Col xs={{span:3, offset: 1}} style={styles.image_container_div}>
                                 <img src={top} style={styles.top_image}/>
                             </Col>
-                            <Col xs={9} style={styles.input_container_div}>
+                            <Col xs={{span: 4}} style={styles.input_container_div}>
                                 <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={styles.input}/>
                             </Col>
                         </Row>
                     </Col>
-                    <Col xs={{span: 5, offset:3}} className={''}>
+                    <Col xs={12} className={''}>
                         <Row>
-                            <Col xs={3}>
-                            </Col>
-                            <Col xs={9} style={styles.input_container_div}>
+                            <Col xs={{span: 4, offset: 4}} style={styles.input_container_div}>
                                 <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={styles.input}/>
                             </Col>
                         </Row>
                     </Col>
-                    <Col xs={{span: 5, offset:3}} className={''}>
+                    <Col xs={12} className={''}>
                         <Row>
-                            <Col xs={3}>
-                            </Col>
-                            <Col xs={9} style={styles.textarea_container_div}>
+                            <Col xs={{span: 4, offset: 4}} style={styles.textarea_container_div}>
                                 <textarea style={{...styles.input, ...styles.text_area}} rows={12} id="message" name="message" placeholder={'Mensaje'}/>
                             </Col>
                         </Row>
                     </Col>
-                    <Col xs={{span: 12}} className={''} style={styles.bottomBack}>
+                    <Col xs={{span: 12}} className={'text-center'} style={styles.bottomBack}>
                         <button className={'btn btn-sm'} type={"submit"} style={styles.button}>Enviar</button>
                     </Col>
             </form>
