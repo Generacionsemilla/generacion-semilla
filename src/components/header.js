@@ -25,7 +25,10 @@ const Header = ({isHome}) => {
             homeIconLink:{
                 width: xxlargeTop ? '60px' : '70px',
                 margin: '15px 0px 0px 20px',
-                display: 'block'
+                display: 'block',
+                zIndex: '5',
+                position: 'relative'
+
             },
             header:{
                 height: '180px',
@@ -37,14 +40,14 @@ const Header = ({isHome}) => {
             },
             headerBackgroundFull:{
                 position: "absolute",
-                zIndex: '-2',
+                zIndex: '3',
                 top: '0',
                 width: '100%',
                 maxHeight: '120px'
             },
             headerBackgroundIcon:{
                 position: "absolute",
-                zIndex: '-1',
+                zIndex: '4',
                 top: '0',
                 left: '0',
                 width: mediumTop ? '140px' : xxlargeTop ? '180px' : '200px',
@@ -69,7 +72,7 @@ const Header = ({isHome}) => {
                 backgroundColor: 'transparent',
                 border: 'none',
                 color: menuMOpen ? 'gray' : 'white',
-                zIndex: '3',
+                zIndex: '5',
                 position: 'absolute'
             },
             headerLink:{
@@ -87,7 +90,7 @@ const Header = ({isHome}) => {
                 width: '205px',
                 height: '275px',
                 position: 'absolute',
-                zIndex: '1',
+                zIndex: '5',
                 top: '0',
                 left: '0'
             },
@@ -96,7 +99,7 @@ const Header = ({isHome}) => {
                 position: 'absolute',
                 top: '0',
                 left: '0',
-                zIndex: -'1'
+                zIndex: '4'
             }
         }
 
@@ -104,7 +107,7 @@ const Header = ({isHome}) => {
     const { t } = useTranslation();
     return (
         <header>
-            <Collapse in={menuMOpen} style={styles.header_m.collapse}>
+            <Collapse in={menuMOpen} style={styles.header_m.collapse} >
                 <div id="m-movil" >
                     <img src={menu_back} style={styles.header_m.menuBack}/>
                     <Row style={{marginTop: '65px', marginLeft: '20px'}}>
@@ -142,13 +145,12 @@ const Header = ({isHome}) => {
                 <Col xs={12} style={styles.header_d.headerBackground} >
                     <svg xmlns="http://www.w3.org/2000/svg" style={styles.header_d.headerBackgroundIcon} xmlnsXlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify" viewBox="0 0 375 375" preserveAspectRatio="none" version="1.0"><defs><clipPath id="clip-0"><path d="M 0 0 L 375 0 L 375 256 L 0 256 Z M 0 0 " clipRule="nonzero"/></clipPath><clipPath id="clip-1"><path d="M -51.773438 492.085938 L -507.585938 -152.847656 L 137.351562 -608.660156 L 593.160156 36.277344 Z M -51.773438 492.085938 " clipRule="nonzero"/></clipPath><clipPath id="clip-2"><path d="M -51.773438 492.085938 L -507.585938 -152.847656 L 137.351562 -608.660156 L 593.160156 36.277344 Z M -51.773438 492.085938 " clipRule="nonzero"/></clipPath></defs><g clipPath="url(#clip-0)"><g clipPath="url(#clip-1)"><g clipPath="url(#clip-2)"><path fill="rgb(24.308777%, 36.859131%, 44.709778%)" d="M 376.25 -43.488281 C 381.730469 255.722656 -75.101562 269.703125 -158.136719 249.089844 C -316 210.183594 -302.453125 -16.40625 -174.449219 -47.105469 C -81.535156 -69.449219 7.660156 -68.855469 -8.953125 -263.679688 C -22.703125 -425.714844 108.851562 -512.695312 177.550781 -477.886719 C 277.972656 -427.203125 372.3125 -254.042969 376.25 -43.488281 Z M 376.25 -43.488281 " fillOpacity="1" fillRule="nonzero"/></g></g></g></svg>
                     <img style={styles.header_d.headerBackgroundFull} src={menu_bar_d} className={'d-none d-md-block'}/>
-                    {/*<img style={styles.header_d.headerBackgroundFull} src={menu_back_full} className={'d-xs-block d-md-none'}/>*/}
                 </Col>
 
                 <Col md={2} xl={1} className={'d-none d-md-block'}>
                     <Link to="/" style={styles.header_d.homeIconLink}><img src={icon_desktop} style={styles.header_d.iconDesktop} alt={t('title')} title={t('title')}></img></Link>
                 </Col>
-                <Col md={10} xl={11} className={'d-none d-md-block'}>
+                <Col md={10} xl={11} className={'d-none d-md-block'} style={{zIndex: 5}}>
                     <Row className={'text-center'} style={styles.header_d.linksRow}>
                         <Col>
                             <Link to="/" style={styles.header_d.headerLink}>{t('header.home')}</Link>

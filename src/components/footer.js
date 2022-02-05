@@ -23,7 +23,9 @@ const Footer = ({showSocials}) => {
                 backgroundImage: `url(${mediumTop ? background_m : background})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-                backgroundPositionX: '50%'
+                backgroundPositionX: '50%',
+                zIndex: 3,
+                position: 'relative'
 
             },
             icon:{
@@ -43,7 +45,6 @@ const Footer = ({showSocials}) => {
                 minHeight: '100px',
                 alignItems: 'center',
                 marginTop: mediumTop ? '' : '-50px',
-                zIndex: 0
             },
             textsRow: {
                 lineHeight: 2,
