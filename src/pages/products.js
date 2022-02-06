@@ -5,8 +5,11 @@ import {Col, Container, Row} from "react-bootstrap";
 import {STYLES_COMMON} from "../assets/styles_common";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import {useTranslation} from "react-i18next";
 
 const Products = () => {
+
+    const { t } = useTranslation();
 
     const styles = {
         title:{
@@ -23,7 +26,7 @@ const Products = () => {
 
     return (
         <Container fluid>
-            <Header></Header>
+            <Header title={t('titles.products')}></Header>
             <Row style={styles.productsRow}>
                 <Col xs={12} className={'text-center'}>
                     <h3 style={styles.title}>NUESTROS PRODUCTOS</h3>

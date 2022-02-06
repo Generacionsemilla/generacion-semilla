@@ -8,6 +8,7 @@ import top from "../assets/contact/top.svg";
 import middle from "../assets/contact/middle.svg";
 import bottom from "../assets/contact/bottom.svg";
 import {useMediaQuery} from "react-responsive";
+import {useTranslation} from "react-i18next";
 
 const submitForm = (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ const submitForm = (e) => {
 };
 
 const Contact = () => {
+    const { t } = useTranslation();
     const inputFieldStyle = `
                input::placeholder, textarea::placeholder{
                        opacity: 1
@@ -35,6 +37,30 @@ const Contact = () => {
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
 
     const styles = {
+        filson_pro_regular:{
+            fontFamily: 'filson-pro,sans-serif',
+            fontWeight: '400',
+            fontStyle: 'normal'
+        },
+        filson_pro_bold:{
+            fontFamily: 'filson-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal'
+        },
+        title_1:{
+            fontFamily: 'tomarik-brush,sans-serif',
+            fontWeight: '400',
+            fontStyle: 'normal',
+            color: STYLES_COMMON.colors.verdeAzulado,
+            fontSize: '60px'
+        },
+        title_2:{
+            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal',
+            color: STYLES_COMMON.colors.azulita,
+            letterSpacing: 4
+        },
         input:{
             color: STYLES_COMMON.colors.tusaturado,
             width: '100%',
@@ -106,35 +132,35 @@ const Contact = () => {
             <style>
                 {inputFieldStyle}
             </style>
-            <Header></Header>
+            <Header title={t('titles.contact')}></Header>
             <Row className={'text-center'}>
-                <h3>CONTACTO</h3>
-                <h4>Formulario de Contacto</h4>
+                <h3 style={styles.title_1}>CONTACTO</h3>
+                <h4 style={styles.title_2} className={'mt-5'}>Formulario de Contacto</h4>
             </Row>
 
             <Row className={'text-center'}>
                 <form id={"contactForm"} action="https://api.sendgrid.com/v3/mail/send" method="POST" onSubmit={submitForm} style={styles.middleBack}>
-                    <Col xs={12} className={'mt-5 text-center'}>
+                    <Col xs={12} className={'mt-2 text-center'}>
                         <Row>
                             <Col xs={{span:3, offset: 1}} style={styles.image_container_div}>
                                 <img src={top} style={styles.top_image}/>
                             </Col>
                             <Col xs={{span: 4}} style={styles.input_container_div}>
-                                <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={styles.input}/>
+                                <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={{...styles.input, ...styles.filson_pro_regular}}/>
                             </Col>
                         </Row>
                     </Col>
                     <Col xs={12} className={''}>
                         <Row>
                             <Col xs={{span: 4, offset: 4}} style={styles.input_container_div}>
-                                <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={styles.input}/>
+                                <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={{...styles.input, ...styles.filson_pro_regular}}/>
                             </Col>
                         </Row>
                     </Col>
                     <Col xs={12} className={''}>
                         <Row>
                             <Col xs={{span: 4, offset: 4}} style={styles.textarea_container_div}>
-                                <textarea style={{...styles.input, ...styles.text_area}} rows={12} id="message" name="message" placeholder={'Mensaje'}/>
+                                <textarea style={{...styles.input, ...styles.text_area, ...styles.filson_pro_regular}} rows={12} id="message" name="message" placeholder={'Mensaje'}/>
                             </Col>
                         </Row>
                     </Col>

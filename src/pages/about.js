@@ -100,10 +100,10 @@ const About = () => {
 
     return (
         <Container fluid>
-            <Header></Header>
+            <Header title={t('titles.about')}></Header>
             {!mediumTop &&
             <Row className={'text-center'}>
-                <h3 style={styles.title}>¿QUIENES SOMOS?</h3>
+                <h3 style={styles.title}>{t('titles.about')}</h3>
             </Row>
             }
 

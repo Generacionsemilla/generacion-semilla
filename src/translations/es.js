@@ -7,6 +7,13 @@ export const TRANSLATIONS_ES = {
         "store": "Tienda",
         "products": "Productos"
     },
+    titles: {
+        "home": "HOME",
+        "about": "¿QUIÉNES SOMOS?",
+        "contact": "CONTACTO",
+        "store": "TIENDA",
+        "products": "PRODUCTOS"
+    },
     about:{
         top:{
             "left_1": "Generación semilla es una editorial dedicada a la enseñanza de las ciencias naturales, a la cual no le alcanzó con producir libros, sino que además decidió producir objetos con los cuáles las niñas y los niños puedan interactuar para aprender sobre los fenómenos de la naturaleza.",
