@@ -15,6 +15,10 @@ export const STYLES_COMMON = {
         lg: '991px',
         xl: '1199px',
         xxl: '1399px'
+    },
+    pageContainer:{
+        display: 'flex',
+        flexDirection: 'column'
     }
 
 };

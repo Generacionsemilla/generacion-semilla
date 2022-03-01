@@ -20,10 +20,11 @@ const Home = () => {
 
     const styles = {
         mainRow:{
-            minHeight: '500px',
             fontSize: largeTop ? '12px' : '16px',
             letterSpacing: '3px',
-            marginTop: '50px'
+            marginTop: '50px',
+            height: 'calc(-530px + 100vh)',
+            minHeight: xxlargeMin ? '975px' : xlargeMin ? '650px' : largeTop ? '390px' : mediumTop ? '300px' : '575px'
         },
         logo:{
             width: '100%'
@@ -64,7 +65,7 @@ const Home = () => {
 
     }
     return (
-        <Container fluid>
+        <Container fluid style={STYLES_COMMON.pageContainer}>
             <Header isHome={true}></Header>
             <Row style={styles.mainRow} className={'text-center'}>
                 <Col xs={2} className={'d-none d-md-block'}>

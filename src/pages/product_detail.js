@@ -55,11 +55,13 @@ const ProductDetail = () => {
     }
 
     return (
-        <Container fluid>
-            <Header></Header>
+        <Container fluid style={STYLES_COMMON.pageContainer}>
+            <Header title={product.title.toUpperCase()}></Header>
             <Row>
-                <Col md={{span: 2, offset: 5}} xs={{span: 4, offset: 4}} >
-                    <h3 style={styles.title} className={'text-center d-none d-md-block mb-5'}>{product.title.toUpperCase()}</h3>
+                <Col md={{span: 2, offset: 5}} xs={{span: 4, offset: 4}} className={'text-center '}>
+                    {!mediumTop &&
+                    <h3 style={styles.title} className={'mb-5'}>{product.title.toUpperCase()}</h3>
+                    }
                     <img style={styles.icons}
                          src={require('../assets/products/icons/' + product.name + '.png').default}></img>
                 </Col>
@@ -71,7 +73,7 @@ const ProductDetail = () => {
             </Row>
             <Row className={'mt-5'}>
                 <Col xs={12} className={'p-0'}>
-                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_1.jpg').default}></img>
+                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_1.png').default}></img>
                 </Col>
             </Row>
             <Row className={'text-center mt-5'}>
@@ -82,7 +84,7 @@ const ProductDetail = () => {
             </Row>
             <Row className={'mt-5 px-0'}>
                 <Col xs={12} className={'p-0'} style={styles.secondImageCol}>
-                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.jpg').default}></img>
+                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.png').default}></img>
                 </Col>
             </Row>
             <Footer></Footer>

@@ -21,12 +21,9 @@ const Footer = ({showSocials}) => {
             footer:{
                 fontFamily: 'Arial',
                 backgroundImage: `url(${mediumTop ? background_m : background})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPositionX: '50%',
-                zIndex: 3,
-                position: 'relative'
-
+                backgroundSize: mediumTop ? '100% 300px' : '100% 700px',
+                height: mediumTop ? '300px': '400px',
+                backgroundRepeat: 'no-repeat'
             },
             icon:{
                 maxWidth: mediumTop ? '30px' : largeTop ? '50px' : '60px',
@@ -66,43 +63,45 @@ const Footer = ({showSocials}) => {
   return (
       <footer>
         <Row style={styles.footer.footer}>
-            <Row className={'text-center d-xs-block d-md-none'}  style={styles.footer.logoRow}>
-                <Col>
-                    <img style={styles.footer.logo} src={logo} />
-                </Col>
-            </Row>
-            <Row className={'text-center'} style={styles.footer.rows}>
-              <Col xs={{span: 2,offset:5}}>
-                <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
-              </Col>
-            </Row>
-            <Row className={'text-center d-none d-md-block'}  style={styles.footer.logoRow}>
-              <Col>
-                  <img style={styles.footer.logo} src={logo} />
-              </Col>
-            </Row>
-            {showSocials ?
-                    <Row className={'text-center'} style={styles.footer.rows}>
-                        <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
-                            <Row className={'text-center'} >
-                                <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
-                                <Col><a href='https://www.instagram.com/generacionsemilla/' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={instagram} /></a></Col>
-                                <Col><a href='https://www.facebook.com/generacionsemillaeditorial' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={facebook} /></a></Col>
-                                <Col><a href='https://www.linkedin.com/company/generaci%C3%B3n-semilla' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={linkedin} /></a></Col>
-                            </Row>
-                        </Col>
-                    </Row> : ''
-            }
+            <Col xs={12}>
+                <Row className={'text-center d-xs-block d-md-none'}  style={styles.footer.logoRow}>
+                    <Col>
+                        <img style={styles.footer.logo} src={logo} />
+                    </Col>
+                </Row>
+                <Row className={'text-center'} style={styles.footer.rows}>
+                  <Col xs={{span: 2,offset:5}}>
+                    <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
+                  </Col>
+                </Row>
+                <Row className={'text-center d-none d-md-block'}  style={styles.footer.logoRow}>
+                  <Col>
+                      <img style={styles.footer.logo} src={logo} />
+                  </Col>
+                </Row>
+                {showSocials ?
+                        <Row className={'text-center'} style={styles.footer.rows}>
+                            <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
+                                <Row className={'text-center'} >
+                                    <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
+                                    <Col><a href='https://www.instagram.com/generacionsemilla/' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={instagram} /></a></Col>
+                                    <Col><a href='https://www.facebook.com/generacionsemillaeditorial' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={facebook} /></a></Col>
+                                    <Col><a href='https://www.linkedin.com/company/generaci%C3%B3n-semilla' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={linkedin} /></a></Col>
+                                </Row>
+                            </Col>
+                        </Row> : ''
+                }
 
-            <Row className={'text-center'} style={styles.footer.textsRow}>
-                <Col xs={12} md={{span:10, offset:1}}>
-                    <Row className={'text-center'} >
-                        <Col>Envíos a todo el país</Col>
-                        <Col>©Generación semilla, 2021</Col>
-                        <Col>Caseros, Gran Buenos aires</Col>
-                    </Row>
-                </Col>
-            </Row>
+                <Row className={'text-center'} style={styles.footer.textsRow}>
+                    <Col xs={12} md={{span:10, offset:1}}>
+                        <Row className={'text-center'} >
+                            <Col>Envíos a todo el país</Col>
+                            <Col>©Generación semilla, 2021</Col>
+                            <Col>Caseros, Gran Buenos aires</Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </Col>
         </Row>
       </footer>
   );

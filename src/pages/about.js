@@ -99,7 +99,7 @@ const About = () => {
     }
 
     return (
-        <Container fluid>
+        <Container fluid style={STYLES_COMMON.pageContainer}>
             <Header title={t('titles.about')}></Header>
             {!mediumTop &&
             <Row className={'text-center'}>
