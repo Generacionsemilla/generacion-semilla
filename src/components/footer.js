@@ -35,20 +35,16 @@ const Footer = ({showSocials}) => {
                 maxHeight: '200px'
             },
             rows:{
-                minHeight: '100px',
+                minHeight: showSocials ? (mediumTop ? '75px' : '100px') : (mediumTop ? '100px' : '133px') ,
                 alignItems: 'center'
             },
             logoRow:{
-                minHeight: '100px',
-                alignItems: 'center',
                 marginTop: mediumTop ? '' : '-50px',
             },
             textsRow: {
                 lineHeight: 2,
                 fontSize: mediumTop ? '10px' : '14px',
                 color: STYLES_COMMON.colors.blancoHielo,
-                minHeight: '100px',
-                alignItems: 'center',
                 fontFamily: 'filson-pro,sans-serif',
                 fontWeight: '400',
                 fontStyle: 'normal'
@@ -64,7 +60,7 @@ const Footer = ({showSocials}) => {
       <footer>
         <Row style={styles.footer.footer}>
             <Col xs={12}>
-                <Row className={'text-center d-xs-block d-md-none'}  style={styles.footer.logoRow}>
+                <Row className={'text-center d-xs-block d-md-none'}  style={{...styles.footer.rows, ...styles.footer.logoRow}}>
                     <Col>
                         <img style={styles.footer.logo} src={logo} />
                     </Col>
@@ -74,12 +70,12 @@ const Footer = ({showSocials}) => {
                     <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
                   </Col>
                 </Row>
-                <Row className={'text-center d-none d-md-block'}  style={styles.footer.logoRow}>
+                <Row className={'text-center d-none d-md-block'}  style={{...styles.footer.rows, ...styles.footer.logoRow}}>
                   <Col>
                       <img style={styles.footer.logo} src={logo} />
                   </Col>
                 </Row>
-                {showSocials ?
+                {showSocials &&
                         <Row className={'text-center'} style={styles.footer.rows}>
                             <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
                                 <Row className={'text-center'} >
@@ -89,10 +85,10 @@ const Footer = ({showSocials}) => {
                                     <Col><a href='https://www.linkedin.com/company/generaci%C3%B3n-semilla' target="_blank" rel="noreferrer"><img style={styles.footer.icon} src={linkedin} /></a></Col>
                                 </Row>
                             </Col>
-                        </Row> : ''
+                        </Row>
                 }
 
-                <Row className={'text-center'} style={styles.footer.textsRow}>
+                <Row className={'text-center'} style={{...styles.footer.rows, ...styles.footer.textsRow}}>
                     <Col xs={12} md={{span:10, offset:1}}>
                         <Row className={'text-center'} >
                             <Col>Envíos a todo el país</Col>

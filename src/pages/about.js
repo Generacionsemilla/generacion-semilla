@@ -6,9 +6,11 @@ import top_left_d from '../assets/about/desktop/top_left.svg';
 import top_left_m from '../assets/about/mobile/top_left.svg';
 import top_right from '../assets/about/desktop/top_right.svg';
 import top_bottom from '../assets/about/desktop/top_bottom.svg';
-import mid_top from '../assets/about/desktop/mid_top.svg';
+import mid_top from '../assets/about/desktop/mid_top.png';
+import mid_top_m from '../assets/about/mobile/mid_top_m.png';
 import mid_bottom from '../assets/about/desktop/mid_bottom.svg';
 import bottom from '../assets/about/desktop/bottom.svg';
+import bottom_m from '../assets/about/mobile/bottom_m.svg';
 import {STYLES_COMMON} from "../assets/styles_common";
 import youtube from "../assets/footer/youtube.png";
 import instagram from "../assets/footer/instagram.png";
@@ -43,7 +45,6 @@ const About = () => {
         },
         top_right:{
             marginTop: mediumTop ? '50px' : '100px',
-            marginRight: '-60px'
         },
         top_left_text_1:{
             position: 'absolute',
@@ -78,8 +79,12 @@ const About = () => {
             width: '110%',
             marginLeft: '-75px'
         },
+        bottom_m:{
+            marginBottom: '20px',
+            width:'100px'
+        },
         icon:{
-            maxWidth: '80px',
+            maxWidth: mediumTop ? '40px' : '80px',
             width: '100%'
         },
         middle_bottom_socials_row:{
@@ -112,9 +117,11 @@ const About = () => {
                 {mediumTop && <p style={{...styles.filson_pro_regular, ...styles.top_left_text_m}}>Editorial lúdica y experimental</p>}
                 <p style={{...styles.filson_pro_regular, ...styles.top_left_text_1}}>{t('about.top.left_1')}</p>
                 <p style={{...styles.filson_pro_regular, ...styles.top_left_text_2}}>{t('about.top.left_2')}</p>
-                <Col xs={5}><img src={mediumTop ? top_left_m : top_left_d} style={{width: mediumTop ? '140%':'130%'}}/></Col>
+                <Col xs={5}><img src={mediumTop ? top_left_m : top_left_d} style={{width: '110%'}}/></Col>
                 <Col xs={7}><img src={top_right} style={styles.top_right}/></Col>
+                {!mediumTop &&
                 <Col xs={12}><img src={top_bottom} style={{marginTop: '-60px'}}/></Col>
+                }
             </Row>
 
             <Row className={'text-center'}>
@@ -126,7 +133,10 @@ const About = () => {
                 <Col xs={{span:8, offset:2}} className={'mt-5'}><p style={styles.filson_pro_regular}>{t('about.middle')}</p></Col>
             </Row>
             <Row className={'text-center'}>
-                <Col xs={{span:12}}><img src={mid_top}/></Col>
+                <Col xs={{span:12}}>
+                    {mediumTop ? <img src={mid_top_m} style={{width: '100%'}}/> :
+                        <img src={mid_top} style={{width: '100%'}}/>}
+                    </Col>
             </Row>
             <Row className={'text-center'} style={{position: 'relative'}}>
                 <Row className={'text-center'} style={styles.middle_bottom_socials_row}>
@@ -148,7 +158,8 @@ const About = () => {
                 <Col xs={{span:8, offset:2}}><p style={styles.filson_pro_regular}>{t('about.bottom.text_bottom')}</p></Col>
             </Row>
             <Row className={'text-center'}>
-                <Col xs={{span:12}}><img style={styles.bottom} src={bottom}/></Col>
+
+                <Col xs={{span:12}}>{mediumTop ? <img style={styles.bottom_m} src={bottom_m}/> : <img style={styles.bottom} src={bottom}/>}</Col>
             </Row>
             <Footer></Footer>
         </Container>
