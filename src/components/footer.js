@@ -60,21 +60,27 @@ const Footer = ({showSocials}) => {
       <footer>
         <Row style={styles.footer.footer}>
             <Col xs={12}>
-                <Row className={'text-center d-xs-block d-md-none'}  style={{...styles.footer.rows, ...styles.footer.logoRow}}>
+                {mediumTop &&
+                <Row className={'text-center'}
+                     style={{...styles.footer.rows, ...styles.footer.logoRow}}>
                     <Col>
-                        <img style={styles.footer.logo} src={logo} />
+                        <img style={styles.footer.logo} src={logo}/>
                     </Col>
                 </Row>
-                <Row className={'text-center'} style={styles.footer.rows}>
-                  <Col xs={{span: 2,offset:5}}>
-                    <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
-                  </Col>
-                </Row>
-                <Row className={'text-center d-none d-md-block'}  style={{...styles.footer.rows, ...styles.footer.logoRow}}>
-                  <Col>
-                      <img style={styles.footer.logo} src={logo} />
-                  </Col>
-                </Row>
+                }
+                    <Row className={'text-center'} style={styles.footer.rows}>
+                      <Col xs={{span: 2,offset:5}}>
+                        <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
+                      </Col>
+                    </Row>
+                {!mediumTop &&
+                    <Row className={'text-center d-none d-md-block'}
+                         style={{...styles.footer.rows, ...styles.footer.logoRow}}>
+                        <Col>
+                            <img style={styles.footer.logo} src={logo}/>
+                        </Col>
+                    </Row>
+                }
                 {showSocials &&
                         <Row className={'text-center'} style={styles.footer.rows}>
                             <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>

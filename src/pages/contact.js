@@ -60,7 +60,9 @@ const Contact = () => {
                        opacity: 1
                }`
 
+    const smallTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.sm+')' });
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
+    const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
 
     const styles = {
         filson_pro_regular:{
@@ -72,6 +74,11 @@ const Contact = () => {
             fontFamily: 'filson-pro,sans-serif',
             fontWeight: '700',
             fontStyle: 'normal'
+        },
+        providence_sans_bold:{
+            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal',
         },
         mainRow:{
             minHeight: '950px',
@@ -85,9 +92,6 @@ const Contact = () => {
             fontSize: '60px'
         },
         title_2:{
-            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
-            fontWeight: '700',
-            fontStyle: 'normal',
             color: STYLES_COMMON.colors.azulita,
             letterSpacing: 4
         },
@@ -136,9 +140,6 @@ const Contact = () => {
             borderColor: STYLES_COMMON.colors.tusaturado,
             backgroundColor: STYLES_COMMON.colors.tusaturado,
             filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
-            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
-            fontWeight: '700',
-            fontStyle: 'normal',
             lineHeight: mediumTop ? '2' : '2.5',
             letterSpacing: '6px',
             width: mediumTop ? '130px' : '200px',
@@ -160,7 +161,7 @@ const Contact = () => {
             marginTop: '-130px',
             marginBottom: '-250px',
             minHeight: '1330px',
-            height: 'calc(-480px + 100vh) !important'
+            height: 'calc(-100px + 100vh)'
         },
         sentSuccessfullyMain: {
             backgroundImage: `url(${sentSuccessfully})`,
@@ -174,7 +175,9 @@ const Contact = () => {
             alignItems: 'center',
             textAlign: 'center',
             marginTop: '250px',
-            height: '550px'
+            height: mediumTop ? 'calc(-850px + 100vh)' : 'calc(-900px + 100vh)',
+            minHeight: '550px'
+
         },
         resultRow2:{
             display: 'flex',
@@ -184,10 +187,10 @@ const Contact = () => {
             maxHeight: '250px'
         },
         smallIcon:{
-            maxWidth: '50px'
+            maxWidth: mediumTop ? '30px' : '45px'
         },
         bigIcon:{
-            maxWidth: '90px'
+            maxWidth:  mediumTop ? '70px' : '85px'
         }
     }
 
@@ -208,7 +211,7 @@ const Contact = () => {
                             <img src={ok} style={styles.bigIcon}/>
                         </Col>
                         <Col xs={3} style={{marginTop: '150px'}}>
-                            <h3 style={{color: STYLES_COMMON.colors.blancoHielo}}>Mensaje enviado con éxito</h3>
+                            <h3 style={{...styles.providence_sans_bold, color: STYLES_COMMON.colors.blancoHielo}}>Mensaje enviado con éxito</h3>
                         </Col>
                     </Row>
                     <Row style={styles.resultRow2}>
@@ -216,7 +219,7 @@ const Contact = () => {
                             <img src={happy} style={styles.smallIcon}/>
                         </Col>
                         <Col xs={5} className={'mt-2'}>
-                            <h3>Mientras esperas, recordá que nos podes seguir y contactar también por estos medios</h3>
+                            <h3 style={{...styles.providence_sans_bold, color: STYLES_COMMON.colors.blancoHielo, fontSize: smallTop ? '16px' : largeTop && '20px'}}>Mientras esperas, recordá que nos podes seguir y contactar también por estos medios</h3>
                         </Col>
                         <Col xs={4} className={'mt-2'}>
                             <img src={arrow} style={styles.smallIcon}/>
@@ -236,7 +239,7 @@ const Contact = () => {
                             <img src={sad} style={styles.bigIcon}/>
                         </Col>
                         <Col xs={3} style={{marginTop: '150px'}}>
-                            <h3 style={{color: STYLES_COMMON.colors.blancoHielo}}>Error, inténtalo nuevamente</h3>
+                            <h3 style={{...styles.providence_sans_bold, color: STYLES_COMMON.colors.blancoHielo}}>Error, inténtalo nuevamente</h3>
                         </Col>
                     </Row>
                     <Row style={styles.resultRow2}>
@@ -244,7 +247,7 @@ const Contact = () => {
                             <img src={smile} style={styles.smallIcon}/>
                         </Col>
                         <Col xs={5} className={'mt-2'}>
-                            <h3>No te preocupes, recordá que nos podes seguir y contactar también por estos medios</h3>
+                            <h3 style={{...styles.providence_sans_bold, color: STYLES_COMMON.colors.blancoHielo, fontSize: smallTop ? '16px' : largeTop && '20px'}}>No te preocupes, recordá que nos podes seguir y contactar también por estos medios</h3>
                         </Col>
                         <Col xs={4} className={'mt-2'}>
                             <img src={arrow} style={styles.smallIcon}/>
@@ -256,7 +259,7 @@ const Contact = () => {
                 <Col xs={12}>
                     <Row className={'text-center'}>
                         <h3 style={styles.title_1}>CONTACTO</h3>
-                        <h4 style={styles.title_2} className={'mt-5'}>Formulario de Contacto</h4>
+                        <h4 style={{...styles.providence_sans_bold, ...styles.title_2}} className={'mt-5'}>Formulario de Contacto</h4>
                     </Row>
                     <Row className={'text-center'}>
                         <form id={"contactForm"} onSubmit={submitForm} style={styles.middleBack}>
@@ -285,7 +288,7 @@ const Contact = () => {
                                 </Row>
                             </Col>
                             <Col xs={{span: 12}} className={'text-center'} style={styles.bottomBack}>
-                                <button className={'btn btn-sm'} type={"submit"} style={styles.button}>Enviar</button>
+                                <button className={'btn btn-sm'} type={"submit"} style={{...styles.providence_sans_bold, ...styles.button}}>Enviar</button>
                             </Col>
                         </form>
                     </Row>

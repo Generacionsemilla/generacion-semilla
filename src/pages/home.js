@@ -68,23 +68,33 @@ const Home = () => {
         <Container fluid style={STYLES_COMMON.pageContainer}>
             <Header isHome={true}></Header>
             <Row style={styles.mainRow} className={'text-center'}>
-                <Col xs={2} className={'d-none d-md-block'}>
-                    <img style={styles.drawings_left} src={drawings_left}></img>
-                </Col>
-                <Col xs={8} className={'d-none d-md-block'}>
-                    <img style={styles.logo} src={central_full} />
-                    <p style={styles.logoPhrase} className={'text-center'}><span>Editorial </span><span style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                    <Button className={'btn btn-sm'} style={styles.button}>Conocenos</Button>
-                </Col>
-                <Col xs={{span:10, offset: 1}} className={'d-xs-block d-md-none'}>
-                    <img style={styles.logo} src={logo} />
-                    <Button className={'btn btn-sm'} style={styles.button}>Conocenos</Button>
-                </Col>
-                <Col xs={2} className={'d-none d-md-block'}>
-                    <img style={styles.drawings_right} src={drawings_right}></img>
-                </Col>
+                {!mediumTop &&
+                    <Col xs={2}>
+                        <img style={styles.drawings_left} src={drawings_left}></img>
+                    </Col>
+                }
+                {!mediumTop &&
+                    <Col xs={8} >
+                        <img style={styles.logo} src={central_full}/>
+                        <p style={styles.logoPhrase} className={'text-center'}><span>Editorial </span><span
+                            style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
+                            style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
+                        <Button className={'btn btn-sm'} style={styles.button}>Conocenos</Button>
+                    </Col>
+                }
+                {mediumTop &&
+                    <Col xs={{span: 10, offset: 1}} >
+                        <img style={styles.logo} src={logo}/>
+                        <Button className={'btn btn-sm'} style={styles.button}>Conocenos</Button>
+                    </Col>
+                }
+                {!mediumTop &&
+                    <Col xs={2} >
+                        <img style={styles.drawings_right} src={drawings_right}></img>
+                    </Col>
+                }
             </Row>
-            <Footer socials={true}></Footer>
+            <Footer showSocials={true}></Footer>
         </Container>
         );
 };
