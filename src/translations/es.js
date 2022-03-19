@@ -22,7 +22,7 @@ export const TRANSLATIONS_ES = {
         },
         "middle":"Nos representa el compromiso y la responsabilidad con el trabajo; la pasión, vocación y el amor por la enseñanza de las ciencias; la curiosidad y las ganas de aprender guían nuestras propuestas, sumado al profesionalismo y al respeto por la carrera docente. También subyacen la sustentabilidad ambiental y el compromiso social.",
         bottom:{
-            "text_top":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna vulputate consectetur sed suspendisse ultricies et. Condimentum dictum natoque sodales .",
+            "text_top":"Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
             "text_bottom":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna vulputate consectetur sed suspendisse ultricies et. Condimentum dictum natoque sodales pellentesque in at. Luctus tortor egestas vestibulum tellus, viverra cras amet accumsan, pulvinar."
         }
     }

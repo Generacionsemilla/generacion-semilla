@@ -48,13 +48,13 @@ const About = () => {
             fontSize: '60px'
         },
         top_right:{
-            marginTop: mediumTop ? '' : xxlTop ? '50px' : '130px',
+            marginTop: mediumTop ? '' : xxlTop ? '70px' : '130px',
             width: mediumTop ? '120%' : '110%',
-            marginLeft: mediumTop ? '-100px' : '-50px'
+            marginLeft: '-50px'
         },
         top_left:{
             marginTop: lgTop ? '-20px' : '-70px',
-            width: '100%'
+            width:  '110%'
         },
         top_left_text_1:{
             position: 'absolute',
@@ -111,7 +111,7 @@ const About = () => {
         },
         middle_bottom_text_row:{
             position: 'absolute',
-            top: smallTop ? '25%' : mediumTop ? '35%' : lgTop ? '55%' : '62%',
+            top: smallTop ? '35%' : mediumTop ? '42%' : lgTop ? '55%' : '62%',
             color: STYLES_COMMON.colors.blancoHielo,
             fontSize: smallTop ? '12px' : mediumTop ? '14px' : 'inherit'
         },
@@ -120,8 +120,8 @@ const About = () => {
         },
         middle_bottom_image:{
             width: '120%',
-            marginTop: '-110px',
-            marginLeft: '-100px'
+            marginTop: mediumTop ? '-50px' : '-110px',
+            marginLeft: smallTop ? '-50px' : '-100px'
         }
     }
 

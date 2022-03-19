@@ -21,8 +21,8 @@ const Footer = ({showSocials}) => {
             footer:{
                 fontFamily: 'Arial',
                 backgroundImage: `url(${mediumTop ? background_m : background})`,
-                backgroundSize: mediumTop ? '100% 300px' : '100% 700px',
-                height: mediumTop ? '300px': '400px',
+                backgroundSize: mediumTop ? '100% 320px' : '100% 700px',
+                height: mediumTop ? '320px': '400px',
                 backgroundRepeat: 'no-repeat'
             },
             icon:{
@@ -62,7 +62,7 @@ const Footer = ({showSocials}) => {
             <Col xs={12}>
                 {mediumTop &&
                 <Row className={'text-center'}
-                     style={{...styles.footer.rows, ...styles.footer.logoRow}}>
+                     style={{...styles.footer.rows, ...styles.footer.logoRow, marginTop: '20px'}}>
                     <Col>
                         <img style={styles.footer.logo} src={logo}/>
                     </Col>
@@ -74,7 +74,7 @@ const Footer = ({showSocials}) => {
                       </Col>
                     </Row>
                 {!mediumTop &&
-                    <Row className={'text-center d-none d-md-block'}
+                    <Row className={'text-center'}
                          style={{...styles.footer.rows, ...styles.footer.logoRow}}>
                         <Col>
                             <img style={styles.footer.logo} src={logo}/>

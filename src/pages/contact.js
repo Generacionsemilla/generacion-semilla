@@ -58,7 +58,22 @@ const Contact = () => {
     const inputFieldStyle = `
                input::placeholder, textarea::placeholder{
                        opacity: 1
-               }`
+               },
+               ::-webkit-input-placeholder {
+                    color: #30C4B5
+                }
+                
+                ::-moz-placeholder {
+                    color: #30C4B5
+                }
+                
+                ::-ms-placeholder {
+                   color: #30C4B5
+                }
+                
+                ::placeholder {
+                   color: #30C4B5
+                }`
 
     const smallTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.sm+')' });
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
@@ -100,7 +115,7 @@ const Contact = () => {
             width: '100%',
             opacity: '1',
             padding: '10px',
-            fontSize: mediumTop ? '14px' : 'inherit'
+            fontSize: smallTop ? '12px' : mediumTop ? '14px' : 'inherit'
         },
         text_area:{
             resize: 'none'
@@ -153,7 +168,8 @@ const Contact = () => {
             backgroundImage: `url(${bottom})`,
             backgroundRepeat: 'no-repeat',
             backgroundPositionX: mediumTop ? 'calc(50% + 80px)' : 'calc(50% + 160px)',
-            minHeight: mediumTop ? '150px' : '200px'
+            minHeight: mediumTop ? '170px' : '200px',
+            backgroundSize: smallTop ? '50%' : ''
         },
         resultRowsMains:{
             backgroundSize: '100% 100%',
@@ -265,24 +281,24 @@ const Contact = () => {
                         <form id={"contactForm"} onSubmit={submitForm} style={styles.middleBack}>
                             <Col xs={12} className={'mt-2 text-center'}>
                                 <Row>
-                                    <Col xs={{span:3, offset: 1}} style={styles.image_container_div}>
+                                    <Col xs={{span:2, offset: 1}} md={{span:3, offset: 1}} style={styles.image_container_div}>
                                         <img src={top} style={styles.top_image}/>
                                     </Col>
-                                    <Col xs={{span: 4}} style={styles.input_container_div}>
+                                    <Col xs={{span: 6}} md={{span:4}} style={styles.input_container_div}>
                                         <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={{...styles.input, ...styles.filson_pro_regular}}/>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col xs={12} className={''}>
                                 <Row>
-                                    <Col xs={{span: 4, offset: 4}} style={styles.input_container_div}>
+                                    <Col xs={{span: 6, offset: 3}} md={{span:4, offset: 4}} style={styles.input_container_div}>
                                         <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={{...styles.input, ...styles.filson_pro_regular}}/>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col xs={12} className={''}>
                                 <Row>
-                                    <Col xs={{span: 4, offset: 4}} style={styles.textarea_container_div}>
+                                    <Col xs={{span: 6, offset: 3}} md={{span:4, offset: 4}} style={styles.textarea_container_div}>
                                         <textarea style={{...styles.input, ...styles.text_area, ...styles.filson_pro_regular}} rows={12} id="message" name="message" placeholder={'Mensaje'}/>
                                     </Col>
                                 </Row>

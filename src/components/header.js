@@ -124,7 +124,9 @@ const Header = ({isHome, title}) => {
                 fontFamily: 'tomarik-brush,sans-serif',
                 fontWeight: '700',
                 fontStyle: 'normal',
-                fontSize: smallTop ? '24px' : '30px'
+                fontSize: smallTop ? '20px' : '26px',
+                wordBreak: 'break-word'
+
             }
         }
 
@@ -169,7 +171,7 @@ const Header = ({isHome, title}) => {
                                 </Button>
                         </Col>
                         {!isHome &&
-                            <Col xs={{span:4, offset:5}} className={'text-center'}>
+                            <Col xs={{span:6, offset:4}} className={'text-center'}>
                                 <h3 style={styles.header_m.title}>{title}</h3>
                             </Col>
                         }

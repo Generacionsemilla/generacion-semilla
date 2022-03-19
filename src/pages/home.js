@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTranslation} from "react-i18next";
-import {Button, Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import logo from '../assets/home/mobile/logo.png'
 import {STYLES_COMMON} from "../assets/styles_common";
 import central_full from "../assets/home/desktop/central_full.png";
@@ -9,6 +9,7 @@ import drawings_left from "../assets/home/desktop/drawings_left.png";
 import {useMediaQuery} from "react-responsive";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import {Link} from "react-router-dom";
 
 const Home = () => {
     const { t } = useTranslation();
@@ -35,6 +36,7 @@ const Home = () => {
             borderRadius: '6px',
             borderColor: STYLES_COMMON.colors.tusaturado,
             backgroundColor: STYLES_COMMON.colors.tusaturado,
+            color: STYLES_COMMON.colors.blancoHielo,
             filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
             fontFamily: 'ff-providence-sans-web-pro,sans-serif',
             fontWeight: '700',
@@ -79,13 +81,13 @@ const Home = () => {
                         <p style={styles.logoPhrase} className={'text-center'}><span>Editorial </span><span
                             style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
                             style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                        <Button className={'btn btn-sm'} style={styles.button}>Conocenos</Button>
+                        <Link to="/about" className={'btn btn-sm'} style={styles.button}>Conocenos</Link>
                     </Col>
                 }
                 {mediumTop &&
                     <Col xs={{span: 10, offset: 1}} >
                         <img style={styles.logo} src={logo}/>
-                        <Button className={'btn btn-sm'} style={styles.button}>Conocenos</Button>
+                        <Link to="/about" className={'btn btn-sm'} style={styles.button}>Conocenos</Link>
                     </Col>
                 }
                 {!mediumTop &&

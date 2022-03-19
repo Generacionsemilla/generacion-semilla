@@ -26,10 +26,11 @@ const ProductDetail = () => {
         },
         icons: {
             maxWidth: '100%',
-            maxHeight: '300px'
+            maxHeight: '200px'
         },
         image:{
-            width:'100%'
+            width:'100%',
+            webkitInputPlaceholder: 'color: red'
         },
         button:{
             borderRadius: '6px',
@@ -49,8 +50,7 @@ const ProductDetail = () => {
             marginTop: '50px'
         },
         secondImageCol:{
-            zIndex: '-1',
-            marginBottom: '-17%'
+            zIndex: '-1'
         }
     }
 
@@ -58,7 +58,7 @@ const ProductDetail = () => {
         <Container fluid style={STYLES_COMMON.pageContainer}>
             <Header title={product.title.toUpperCase()}></Header>
             <Row>
-                <Col md={{span: 2, offset: 5}} xs={{span: 4, offset: 4}} className={'text-center '}>
+                <Col md={{span: 4, offset: 4}} xs={{span: 4, offset: 4}} className={'text-center '}>
                     {!mediumTop &&
                     <h3 style={styles.title} className={'mb-5'}>{product.title.toUpperCase()}</h3>
                     }
