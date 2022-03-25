@@ -135,7 +135,7 @@ const About = () => {
                         <p style={{...styles.providence_sans_bold, ...styles.top_left_subtitle}}><span>Editorial </span><span
                             style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
                             style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                        <p style={{...styles.filson_pro_regular, ...styles.top_left_text}}>{t('about.top.left')}</p>
+                        <p style={{...styles.filson_pro_regular, ...styles.top_left_text}}>{t('about.top')}</p>
                     </div>
                 </Col>
                 <Col xs={6} md={6} style={styles.top_cols}>
