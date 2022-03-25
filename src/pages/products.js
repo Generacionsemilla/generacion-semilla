@@ -16,16 +16,19 @@ const Products = () => {
 
     const styles = {
         title:{
-            fontFamily: 'sketchnote-square,sans-serif',
+            fontFamily: 'tomarik-brush,sans-serif',
             fontWeight: '400',
             fontStyle: 'normal',
             color: STYLES_COMMON.colors.azulita,
-            fontSize: largeTop ? '50px' : '60px'
+            fontSize: largeTop ? '40px' : '50px'
         },
         productsRow:{
             margin: '20px 0 200px',
             minHeight: mediumTop ? '750px' : '500px',
             height: 'calc(-700px + 100vh)'
+        },
+        itemsRow: {
+            marginTop: '30px'
         }
     }
 
@@ -39,7 +42,7 @@ const Products = () => {
                     </Col>
                 }
                 <Col xs={{span: 10, offset: 1}}>
-                    <Row className={'text-center'}>
+                    <Row className={'text-center'} style={styles.itemsRow}>
                         {PRODUCTS.map( (p,i) => {
                             return <ProductItem product={p} index={i}/>
                         })}

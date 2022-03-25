@@ -2,9 +2,9 @@ import React from 'react';
 import Header from "../components/header";
 import Footer from "../components/footer";
 import {Col, Container, Row} from "react-bootstrap";
-import top_left_d from '../assets/about/desktop/top_left.svg';
-import top_left_m from '../assets/about/mobile/top_left.svg';
-import top_right from '../assets/about/desktop/top_right.svg';
+import top_right_lg from '../assets/about/desktop/top_right_lg.png';
+import top_right_xl from '../assets/about/desktop/top_right_xl.png';
+import top_right_m from '../assets/about/mobile/top_right_m_md.png';
 import top_bottom from '../assets/about/desktop/top_bottom.svg';
 import mid_top_lg from '../assets/about/desktop/mid_top_lg.png';
 import mid_top_xl from '../assets/about/desktop/mid_top_xl.png';
@@ -30,6 +30,11 @@ const About = () => {
     const xxlTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.xxl+')' });
 
     const styles = {
+        providence_sans_bold:{
+            fontFamily: 'ff-providence-sans-web-pro,sans-serif',
+            fontWeight: '700',
+            fontStyle: 'normal',
+        },
         filson_pro_regular:{
             fontFamily: 'filson-pro,sans-serif',
             fontWeight: '400',
@@ -45,49 +50,36 @@ const About = () => {
             fontWeight: '700',
             fontStyle: 'normal',
             color: STYLES_COMMON.colors.azulita,
-            fontSize: '60px'
+            fontSize: lgTop ? '40px' : '50px'
         },
-        top_right:{
-            marginTop: mediumTop ? '' : xxlTop ? '70px' : '130px',
-            width: mediumTop ? '120%' : '110%',
-            marginLeft: '-50px'
+        top_cols:{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '5%'
         },
-        top_left:{
-            marginTop: lgTop ? '-20px' : '-70px',
-            width:  '110%'
-        },
-        top_left_text_1:{
-            position: 'absolute',
-            top:  lgTop ? '37%' : '35%',
-            left: mediumTop ? '5%' : '8%',
-            width: mediumTop ? '26%' : '20%',
-            fontSize: mediumTop ? '11px' : '14px'
-        },
-        top_left_text_2:{
-            position: 'absolute',
-            top: mediumTop ? '74%' : lgTop ? '64%' : '62%',
-            left: mediumTop ? '6%' : '8%',
-            width: mediumTop ? '21%' : '20%',
-            color: STYLES_COMMON.colors.blancoHielo,
-            fontSize: mediumTop ? '12px' : lgTop && '14px'
-        },
-        top_left_text_m:{
-            position: 'absolute',
-            top: '18%',
-            left: '5%',
-            width: '35%',
-            color: STYLES_COMMON.colors.durazno,
-            fontSize: '12px'
+        top_left_title:{
+            color: STYLES_COMMON.colors.azulita,
+            fontSize: mediumTop ? '30px' : '50px'
         },
         top_left_logo:{
-            position: 'absolute',
-            top: '4%',
-            left: '5%',
-            width: '35%'
+            width: mediumTop ? '110%' : '100%',
+            marginTop: mediumTop ? '-40px' : '-80px'
+        },
+        top_left_subtitle:{
+            fontSize: mediumTop ? '14px' : '20px'
+        },
+        top_left_text:{
+            fontSize: mediumTop ? '10px' : '14px',
+            whiteSpace: 'break-spaces'
+        },
+        top_right:{
+            width: '100%',
         },
         bottom:{
-            marginBottom: '-200px',
-            width: '110%',
+            marginBottom: lgTop ? '-200px' : xxlTop ? '-250px' : '-270px',
+            marginTop: xxlTop ? '-30px' : '-70px',
+            width: xxlTop ? '115%' : '110%',
             marginLeft: '-75px'
         },
         bottom_m:{
@@ -95,7 +87,7 @@ const About = () => {
             width:'100px'
         },
         icon:{
-            maxWidth: mediumTop ? '40px' : lgTop ? '60px' : '80px',
+            maxWidth: smallTop ? '25px' : mediumTop ? '40px' : lgTop ? '60px' : '80px',
             width: '100%'
         },
         middle_top_text_1:{
@@ -111,11 +103,12 @@ const About = () => {
         },
         middle_bottom_text_row:{
             position: 'absolute',
-            top: smallTop ? '35%' : mediumTop ? '42%' : lgTop ? '55%' : '62%',
+            top: smallTop ? '38%' : mediumTop ? '42%' : lgTop ? '55%' : '62%',
             color: STYLES_COMMON.colors.blancoHielo,
-            fontSize: smallTop ? '12px' : mediumTop ? '14px' : 'inherit'
+            fontSize: smallTop ? '10px' : mediumTop ? '12px' : '20px'
         },
         bottom_text:{
+            marginTop: '40px',
             fontSize: mediumTop ? '14px' : 'inherit'
         },
         middle_bottom_image:{
@@ -134,13 +127,22 @@ const About = () => {
             </Row>
             }
 
-            <Row style={{position: 'relative'}}>
-                {mediumTop && <img src={logo} style={styles.top_left_logo}/>}
-                {mediumTop && <p style={{...styles.filson_pro_regular, ...styles.top_left_text_m}}>Editorial lúdica y experimental</p>}
-                <p style={{...styles.filson_pro_regular, ...styles.top_left_text_1}}>{t('about.top.left_1')}</p>
-                <p style={{...styles.filson_pro_regular, ...styles.top_left_text_2}}>{t('about.top.left_2')}</p>
-                <Col xs={6}><img src={mediumTop ? top_left_m : top_left_d} style={styles.top_left}/></Col>
-                <Col xs={6}><img src={top_right} style={styles.top_right}/></Col>
+            <Row style={{marginTop: !mediumTop && '50px'}}>
+                <Col xs={6} md={6} style={styles.top_cols}>
+                    <div>
+                        <h1 style={{...styles.providence_sans_bold, ...styles.top_left_title}}>Somos</h1>
+                        <img src={logo} style={styles.top_left_logo}/>
+                        <p style={{...styles.providence_sans_bold, ...styles.top_left_subtitle}}><span>Editorial </span><span
+                            style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
+                            style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
+                        <p style={{...styles.filson_pro_regular, ...styles.top_left_text}}>{t('about.top.left')}</p>
+                    </div>
+                </Col>
+                <Col xs={6} md={6} style={styles.top_cols}>
+                    <div>
+                        <img src={mediumTop ? top_right_m : xxlTop ? top_right_lg : top_right_xl} style={styles.top_right}/>
+                    </div>
+                </Col>
                 {!mediumTop &&
                 <Col xs={12}><img src={top_bottom} style={{marginTop: '-60px'}}/></Col>
                 }
@@ -148,7 +150,7 @@ const About = () => {
 
             <Row className={'text-center'}>
                 <Col xs={{span:10, offset:1}} style={styles.middle_top_text_1}>
-                    <h4 style={styles.filson_pro_bold}>Nos inspira <span style={{color: STYLES_COMMON.colors.durazno}}>jugar</span> y <span style={{color: STYLES_COMMON.colors.tusaturado}}>experimentar</span></h4>
+                    <h4 style={styles.providence_sans_bold}>Nos inspira <span style={{color: STYLES_COMMON.colors.durazno}}>jugar</span> y <span style={{color: STYLES_COMMON.colors.tusaturado}}>experimentar</span></h4>
                 </Col>
             </Row>
             <Row className={'text-center'} style={styles.middle_top_text_2}>

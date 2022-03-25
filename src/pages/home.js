@@ -18,6 +18,7 @@ const Home = () => {
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const xlargeMin = useMediaQuery({ query: '(min-width: '+STYLES_COMMON.breakpoints.xl+')' });
     const xxlargeMin = useMediaQuery({ query: '(min-width: '+STYLES_COMMON.breakpoints.xxl+')' });
+    const xxlargeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.xxl+')' });
 
     const styles = {
         mainRow:{
@@ -50,19 +51,19 @@ const Home = () => {
             fontFamily: 'ff-providence-sans-web-pro,sans-serif',
             fontWeight: '700',
             fontStyle: 'normal',
-            marginTop: largeTop ? '-70px' : '-100px'
+            marginTop:  largeTop ? '-80px' : xxlargeTop ? '-100px' : '-140px'
         },
         drawings_right:{
-            maxWidth: xlargeMin ? '450px' : largeTop ? '280px' : '350px',
+            maxWidth: xxlargeMin ? '420px' : largeTop ? '240px' : '320px',
             position: 'relative',
-            right: largeTop ? '110px' : '175px',
-            top: largeTop ? '130px' : '200px'
+            right: largeTop ? '110px' : '145px',
+            top: xxlargeTop ? '240px' : '350px'
         },
         drawings_left:{
-            maxWidth:  xlargeMin ? '400px' : largeTop ? '280px' : '320px',
+            maxWidth:  xxlargeMin ? '420px' : largeTop ? '240px' : '320px',
             position: 'relative',
-            left: '0px',
-            top: largeTop ? '250px' : '350px'
+            left: '-20px',
+            top: xxlargeTop ? '260px' : '380px'
         }
 
     }

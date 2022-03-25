@@ -17,42 +17,59 @@ const ProductItem = ({product, index}) => {
             float: mediumTop ? (index % 2 === 0 ? 'left' : 'right') : ''
         },
         product_name: {
-            fontFamily: 'sketchnote-square,sans-serif',
+            fontFamily: 'tomarik-brush,sans-serif',
             fontWeight: '400',
             fontStyle: 'normal',
             color: STYLES_COMMON.colors.verdeAzulado,
-            fontSize: smallTop ? '15px' : largeTop ? '20px' : '25px'
+            fontSize: smallTop ? '16px' : largeTop ? '20px' : '25px',
+            minHeight: !mediumTop && '75px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: !mediumTop && '20px'
         },
         more: {
             fontFamily: 'filson-pro,sans-serif',
             fontWeight: '700',
             fontStyle: 'normal',
             textDecoration: 'none',
-            color: STYLES_COMMON.colors.tusaturado
-
-        },
-        description: {
-            fontFamily: 'filson-pro,sans-serif',
-            fontWeight: '400',
-            fontStyle: 'normal'
+            color: STYLES_COMMON.colors.tusaturado,
+            fontSize: smallTop ? '14px' : largeTop ? '16px' : '18px',
         },
         link: {
             textDecoration: 'none'
         },
         rows: {
             marginTop: mediumTop && index !== 0 ? '80px' : ''
+        },
+        colsMobile:{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
         }
     }
 
     if(!mediumTop){
         return(
             <Col xs={12} md={3} >
+                {product.active &&
                 <Link style={styles.link} to={'/products/' + product.name}>
                     <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
                     <p style={styles.product_name}>{product.title.toUpperCase()}</p>
                 </Link>
-                <p style={styles.description}>{product.description}</p>
+                }
+                {product.active &&
                 <Link style={styles.more} to={'/products/' + product.name}>Ver más</Link>
+                }
+                {!product.active &&
+                <p style={styles.link} >
+                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
+                    <p style={styles.product_name}>{product.title.toUpperCase()}</p>
+                </p>
+                }
+                {!product.active &&
+                <p style={styles.more}>(Próximamente)</p>
+                }
             </Col>
         )
     } else
@@ -60,24 +77,47 @@ const ProductItem = ({product, index}) => {
         <Row style={styles.rows}>
             {index % 2 === 0 &&
             <Col xs={6}>
+                {product.active &&
                 <Link style={styles.link} to={'/products/' + product.name}>
                     <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
                 </Link>
+                }
+                {!product.active &&
+                <p style={styles.link} >
+                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
+                </p>
+                }
             </Col>
             }
 
-            <Col xs={6}>
-                <Link style={styles.link} to={'/products/' + product.name}>
-                    <p style={styles.product_name}>{product.title.toUpperCase()}</p>
-                </Link>
-                <p style={styles.description}>{product.description}</p>
-                <Link style={styles.more} to={'/products/' + product.name}>Ver más</Link>
+            {product.active &&
+            <Col xs={6} style={styles.colsMobile}>
+                    <Link style={styles.link} to={'/products/' + product.name}>
+                        <p style={styles.product_name}>{product.title.toUpperCase()}</p>
+                    </Link>
+                    <p style={styles.description}>{product.description}</p>
+                    <Link style={styles.more} to={'/products/' + product.name}>Ver más</Link>
             </Col>
+            }
+            {!product.active &&
+            <Col xs={6} style={styles.colsMobile}>
+                {!product.active &&
+                <p style={styles.more}>(Próximamente)</p>
+                }
+            </Col>
+            }
             {index % 2 !== 0 &&
             <Col xs={6}>
+                {product.active &&
                 <Link style={styles.link} to={'/products/' + product.name}>
                     <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
                 </Link>
+                }
+                {!product.active &&
+                <p style={styles.link} >
+                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
+                </p>
+                }
             </Col>
             }
         </Row>

@@ -13,13 +13,15 @@ const ProductDetail = () => {
     const product = PRODUCTS.find(prod => prod.name === productName);
 
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
+    const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
 
     const styles = {
         title: {
-            fontFamily: 'sketchnote-square,sans-serif',
+            fontFamily: 'tomarik-brush,sans-serif',
             fontWeight: '400',
             fontStyle: 'normal',
-            color: STYLES_COMMON.colors.azulita
+            color: STYLES_COMMON.colors.azulita,
+            fontSize: largeTop ? '40px' : '50px'
         },
         productsRow: {
             margin: '20px 0 100px',
@@ -46,11 +48,11 @@ const ProductDetail = () => {
             height: mediumTop ? '40px' : '60px',
             fontSize: mediumTop ? '16px' : '22px',
             textDecoration: 'none',
-            color: STYLES_COMMON.colors.blancoHielo,
-            marginTop: '50px'
+            color: STYLES_COMMON.colors.blancoHielo
         },
         secondImageCol:{
-            zIndex: '-1'
+            zIndex: '-1',
+            marginBottom: mediumTop ? '-100px' : '-210px'
         }
     }
 
@@ -68,7 +70,7 @@ const ProductDetail = () => {
             </Row>
             <Row className={'text-center mt-5'}>
                 <Col xs={{span: 10, offset: 1}}>
-                    <p>{product.upper_text}</p>
+                    <p style={{whiteSpace: 'break-spaces'}}>{product.upper_text}</p>
                 </Col>
             </Row>
             <Row className={'mt-5'}>
@@ -76,13 +78,12 @@ const ProductDetail = () => {
                     <img style={styles.image} src={require('../assets/products/images/' + product.name + '_1.png').default}></img>
                 </Col>
             </Row>
-            <Row className={'text-center mt-5'}>
+            <Row className={'mt-5 mb-5 text-center'}>
                 <Col xs={{span: 10, offset: 1}}>
-                    <p>{product.lower_text}</p>
                     <a href={product.link} target="_blank" rel="noreferrer" style={styles.button} className={'btn btn-sm'}>Comprar</a>
                 </Col>
             </Row>
-            <Row className={'mt-5 px-0'}>
+            <Row className={'px-0'}>
                 <Col xs={12} className={'p-0'} style={styles.secondImageCol}>
                     <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.png').default}></img>
                 </Col>

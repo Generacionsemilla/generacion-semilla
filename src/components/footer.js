@@ -13,6 +13,7 @@ import {useMediaQuery} from "react-responsive";
 
 const Footer = ({showSocials}) => {
 
+    const smallTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.sm+')' });
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
 
@@ -43,11 +44,12 @@ const Footer = ({showSocials}) => {
             },
             textsRow: {
                 lineHeight: 2,
-                fontSize: mediumTop ? '10px' : '14px',
+                fontSize: smallTop ? '7px' : mediumTop ? '10px' : '14px',
                 color: STYLES_COMMON.colors.blancoHielo,
                 fontFamily: 'filson-pro,sans-serif',
                 fontWeight: '400',
-                fontStyle: 'normal'
+                fontStyle: 'normal',
+                marginTop: !mediumTop && '50px'
             },
             link:{
                 height: largeTop? '50px' : '60px',

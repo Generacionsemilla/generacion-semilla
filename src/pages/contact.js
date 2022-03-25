@@ -104,11 +104,12 @@ const Contact = () => {
             fontWeight: '400',
             fontStyle: 'normal',
             color: STYLES_COMMON.colors.verdeAzulado,
-            fontSize: '60px'
+            fontSize: mediumTop ? '30px' : largeTop ? '40px' : '50px'
         },
         title_2:{
             color: STYLES_COMMON.colors.azulita,
-            letterSpacing: 4
+            letterSpacing: 4,
+            fontSize: mediumTop ? '18px' : largeTop ? '20px' : '25px'
         },
         input:{
             color: STYLES_COMMON.colors.tusaturado,
@@ -274,8 +275,10 @@ const Contact = () => {
             <Row style={styles.mainRow} id={'form-row'}>
                 <Col xs={12}>
                     <Row className={'text-center'}>
-                        <h3 style={styles.title_1}>CONTACTO</h3>
-                        <h4 style={{...styles.providence_sans_bold, ...styles.title_2}} className={'mt-5'}>Formulario de Contacto</h4>
+                        <Col xs={{span: 8, offset: 2}} md={{span: 12, offset: 0}}>
+                            <h3 style={styles.title_1}>CONTACTO</h3>
+                            <h4 style={{...styles.providence_sans_bold, ...styles.title_2}} className={'mt-5'}>Formulario de Contacto</h4>
+                        </Col>
                     </Row>
                     <Row className={'text-center'}>
                         <form id={"contactForm"} onSubmit={submitForm} style={styles.middleBack}>
