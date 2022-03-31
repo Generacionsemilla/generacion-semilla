@@ -50,6 +50,10 @@ const ProductDetail = () => {
             textDecoration: 'none',
             color: STYLES_COMMON.colors.blancoHielo
         },
+        button_inactive:{
+            fontSize: mediumTop ? '14px' : '20px',
+            cursor: 'initial'
+        },
         secondImageCol:{
             zIndex: '-1',
             marginBottom: mediumTop ? '-100px' : '-210px'
@@ -80,7 +84,12 @@ const ProductDetail = () => {
             </Row>
             <Row className={'mt-5 mb-5 text-center'}>
                 <Col xs={{span: 10, offset: 1}}>
-                    <a href={product.link} target="_blank" rel="noreferrer" style={styles.button} className={'btn btn-sm'}>Comprar</a>
+                    {product.active &&
+                    <a href={product.link} target="_blank" rel="noreferrer" style={styles.button} className={'btn'}>Comprar</a>
+                    }
+                    {!product.active &&
+                    <p href={product.link} target="_blank" rel="noreferrer" style={{...styles.button, ...styles.button_inactive}} className={'btn'}>Próximamente</p>
+                    }
                 </Col>
             </Row>
             <Row className={'px-0'}>

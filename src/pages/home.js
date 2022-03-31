@@ -63,7 +63,7 @@ const Home = () => {
             maxWidth:  xxlargeMin ? '420px' : largeTop ? '240px' : '320px',
             position: 'relative',
             left: '-20px',
-            top: xxlargeTop ? '260px' : '380px'
+            top: largeTop ? '300px' : xxlargeTop ? '320px' : '440px'
         }
 
     }
