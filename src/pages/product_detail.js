@@ -52,6 +52,7 @@ const ProductDetail = () => {
         },
         button_inactive:{
             fontSize: mediumTop ? '14px' : '20px',
+            width: mediumTop ? '200px' : '240px',
             cursor: 'initial'
         },
         secondImageCol:{
