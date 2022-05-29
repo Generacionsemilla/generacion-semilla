@@ -96,7 +96,7 @@ const Contact = () => {
             fontStyle: 'normal',
         },
         mainRow:{
-            minHeight: '950px',
+            minHeight: mediumTop ? '850px' : '950px',
             height: 'calc(-480px + 100vh)'
         },
         title_1:{
@@ -116,7 +116,8 @@ const Contact = () => {
             width: '100%',
             opacity: '1',
             padding: '10px',
-            fontSize: smallTop ? '12px' : mediumTop ? '14px' : 'inherit'
+            fontSize: smallTop ? '12px' : mediumTop ? '14px' : 'inherit',
+            zIndex: '2'
         },
         text_area:{
             resize: 'none'
@@ -138,7 +139,7 @@ const Contact = () => {
         },
         middleBack:{
             backgroundImage: `url(${middle})`,
-            backgroundSize: '50px',
+            backgroundSize: '40px',
             backgroundRepeat: 'no-repeat',
             backgroundPositionX: '50%',
             backgroundPositionY: '65px'

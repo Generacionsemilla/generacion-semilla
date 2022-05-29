@@ -55,17 +55,16 @@ const About = () => {
         top_cols:{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
             padding: '5%'
         },
-        top_left_title:{
-            color: STYLES_COMMON.colors.azulita,
-            fontSize: mediumTop ? '30px' : '50px'
+        top_col_right:{
+            alignItems: 'center',
         },
         top_left_logo:{
             width: mediumTop ? '110%' : '100%'
         },
         top_left_subtitle:{
+            marginTop: '50px',
             fontSize: mediumTop ? '14px' : '20px'
         },
         top_left_text:{
@@ -98,16 +97,20 @@ const About = () => {
         },
         middle_bottom_socials_row:{
             position: 'absolute',
-            top: smallTop ? '50%' : mediumTop ? '55%' : lgTop ? '35%' : '45%'
+            top: smallTop ? '40%' : mediumTop ? '45%' : lgTop ? '35%' : '45%'
         },
         middle_bottom_text_row:{
             position: 'absolute',
-            top: smallTop ? '38%' : mediumTop ? '42%' : lgTop ? '55%' : '62%',
+            top: smallTop ? '60%' : mediumTop ? '62%' : lgTop ? '55%' : '62%',
             color: STYLES_COMMON.colors.blancoHielo,
             fontSize: smallTop ? '10px' : mediumTop ? '12px' : '20px'
         },
         bottom_text:{
             marginTop: '40px',
+            fontSize: mediumTop ? '14px' : 'inherit'
+        },
+        bottom_author:{
+            marginTop: '-40px',
             fontSize: mediumTop ? '14px' : 'inherit'
         },
         middle_bottom_image:{
@@ -129,15 +132,14 @@ const About = () => {
             <Row style={{marginTop: !mediumTop && '50px'}}>
                 <Col xs={6} md={6} style={styles.top_cols}>
                     <div>
-                        {/*<h1 style={{...styles.providence_sans_bold, ...styles.top_left_title}}>Somos</h1>*/}
                         <img src={logo} style={styles.top_left_logo}/>
                         <p style={{...styles.providence_sans_bold, ...styles.top_left_subtitle}}><span>Editorial </span><span
                             style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
                             style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                        <p style={{...styles.filson_pro_regular, ...styles.top_left_text}}>{t('about.top')}</p>
+                        <p style={{...styles.filson_pro_regular, ...styles.top_left_text}}>{mediumTop ?  t('about.top_m') : t('about.top_d')}</p>
                     </div>
                 </Col>
-                <Col xs={6} md={6} style={styles.top_cols}>
+                <Col xs={6} md={6} style={{...styles.top_cols, ...styles.top_col_right}}>
                     <div>
                         <img src={mediumTop ? top_right_m : xxlTop ? top_right_lg : top_right_xl} style={styles.top_right}/>
                     </div>
@@ -161,6 +163,7 @@ const About = () => {
                         xxlTop ? <img src={mid_top_lg} style={{width: '100%'}}/> : <img src={mid_top_xl} style={{width: '100%'}}/>}
                     </Col>
             </Row>
+
             <Row className={'text-center'} style={{position: 'relative'}}>
                 <Row className={'text-center'} style={styles.middle_bottom_socials_row}>
                     <Col xs={{span:10, offset:1}}>
@@ -177,11 +180,15 @@ const About = () => {
                 </Row>
                 <Col xs={{span:12}}><img style={styles.middle_bottom_image} src={mid_bottom}/></Col>
             </Row>
+
             <Row className={'text-center'}>
-                <Col xs={{span:8, offset:2}}><p style={{...styles.filson_pro_regular, ...styles.bottom_text}}><span style={{fontStyle: 'italic'}}>{t('about.bottom.text_bottom_1')}<br/>{t('about.bottom.text_bottom_2')}</span> <span>{t('about.bottom.text_bottom_author')}</span></p></Col>
+                <Col xs={{span:8, offset:2}}><p style={{...styles.filson_pro_regular, ...styles.bottom_text}}><span style={{fontStyle: 'italic'}}>{t('about.bottom.text_bottom_1')}<br/>{t('about.bottom.text_bottom_2')}</span></p></Col>
             </Row>
             <Row className={'text-center'}>
-                <Col xs={{span:12}}>{mediumTop ? <img style={styles.bottom_m} src={bottom_m}/> : <img style={styles.bottom} src={bottom}/>}</Col>
+                <Col xs={{span:12}}>
+                    {mediumTop ? <img style={styles.bottom_m} src={bottom_m}/> : <img style={styles.bottom} src={bottom}/>}
+                    {/*<span style={{...styles.filson_pro_regular, ...styles.bottom_author}}>{t('about.bottom.text_bottom_author')}</span>*/}
+                </Col>
             </Row>
             <Footer></Footer>
         </Container>

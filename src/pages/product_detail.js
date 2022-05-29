@@ -80,7 +80,12 @@ const ProductDetail = () => {
             </Row>
             <Row className={'mt-5'}>
                 <Col xs={12} className={'p-0'}>
-                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_1.png').default}></img>
+                    {product.active &&
+                    <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + product.name + '_1'+product.image1_format).default}></img>
+                    }
+                    {!product.active &&
+                    <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + 'coming_soon_1.png').default}></img>
+                    }
                 </Col>
             </Row>
             <Row className={'mt-5 mb-5 text-center'}>
@@ -95,7 +100,12 @@ const ProductDetail = () => {
             </Row>
             <Row className={'px-0'}>
                 <Col xs={12} className={'p-0'} style={styles.secondImageCol}>
-                    <img style={styles.image} src={require('../assets/products/images/' + product.name + '_2.png').default}></img>
+                    {product.active &&
+                    <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + product.name + '_2'+product.image2_format).default}></img>
+                    }
+                    {!product.active &&
+                    <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + 'coming_soon_2.png').default}></img>
+                    }
                 </Col>
             </Row>
             <Footer></Footer>

@@ -62,29 +62,19 @@ const Footer = ({showSocials}) => {
       <footer>
         <Row style={styles.footer.footer}>
             <Col xs={12}>
-                {mediumTop &&
-                <Row className={'text-center'}
-                     style={{...styles.footer.rows, ...styles.footer.logoRow, marginTop: '20px'}}>
-                    <Col>
-                        <img style={styles.footer.logo} src={logo}/>
-                    </Col>
-                </Row>
-                }
                     <Row className={'text-center'} style={styles.footer.rows}>
                       <Col xs={{span: 2,offset:5}}>
                         <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
                       </Col>
                     </Row>
-                {!mediumTop &&
                     <Row className={'text-center'}
-                         style={{...styles.footer.rows, ...styles.footer.logoRow}}>
+                         style={{...styles.footer.rows, ...styles.footer.logoRow, marginTop: '-20px'}}>
                         <Col>
                             <img style={styles.footer.logo} src={logo}/>
                         </Col>
                     </Row>
-                }
                 {showSocials &&
-                        <Row className={'text-center'} style={styles.footer.rows}>
+                        <Row className={'text-center'} style={{...styles.footer.rows}}>
                             <Col md={{span:6, offset:3}} xs={{span:8, offset:2}}>
                                 <Row className={'text-center'} >
                                     <Col><a href='https://www.youtube.com/channel/UCeqlCxCxGo1cm1iBZtamgWA' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={youtube} /></a></Col>
@@ -96,7 +86,7 @@ const Footer = ({showSocials}) => {
                         </Row>
                 }
 
-                <Row className={'text-center'} style={{...styles.footer.rows, ...styles.footer.textsRow}}>
+                <Row className={'text-center'} style={{...styles.footer.rows, ...styles.footer.textsRow, marginTop: '20px'}}>
                     <Col xs={12} md={{span:10, offset:1}}>
                         <Row className={'text-center'} >
                             <Col>Envíos a todo el país</Col>
