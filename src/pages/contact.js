@@ -117,7 +117,8 @@ const Contact = () => {
             opacity: '1',
             padding: '10px',
             fontSize: smallTop ? '12px' : mediumTop ? '14px' : 'inherit',
-            zIndex: '2'
+            zIndex: '2',
+            backgroundColor: 'white'
         },
         text_area:{
             resize: 'none'

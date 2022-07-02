@@ -65,10 +65,10 @@ const About = () => {
         },
         top_left_subtitle:{
             marginTop: '50px',
-            fontSize: mediumTop ? '14px' : '20px'
+            fontSize: mediumTop ? '16px' : '22px'
         },
         top_left_text:{
-            fontSize: mediumTop ? '10px' : '14px',
+            fontSize: mediumTop ? '12px' : '14px',
             whiteSpace: 'break-spaces'
         },
         top_right:{
@@ -88,12 +88,14 @@ const About = () => {
             maxWidth: smallTop ? '25px' : mediumTop ? '40px' : lgTop ? '60px' : '80px',
             width: '100%'
         },
-        middle_top_text_1:{
-            fontSize: mediumTop && '14px',
+        middle_top_text_col_1:{
             marginTop: '20px'
         },
+        middle_top_title:{
+            fontSize: mediumTop ? '16px' : '22px',
+        },
         middle_top_text_2:{
-            fontSize: mediumTop && '12px'
+            fontSize: mediumTop ? '12px' : '14px'
         },
         middle_bottom_socials_row:{
             position: 'absolute',
@@ -107,11 +109,11 @@ const About = () => {
         },
         bottom_text:{
             marginTop: '40px',
-            fontSize: mediumTop ? '14px' : 'inherit'
+            fontSize: mediumTop ? '12px' : '14px'
         },
         bottom_author:{
             marginTop: '-40px',
-            fontSize: mediumTop ? '14px' : 'inherit'
+            fontSize: mediumTop ? '12px' : '14px'
         },
         middle_bottom_image:{
             width: '120%',
@@ -150,12 +152,12 @@ const About = () => {
             </Row>
 
             <Row className={'text-center'}>
-                <Col xs={{span:10, offset:1}} style={styles.middle_top_text_1}>
-                    <h4 style={styles.providence_sans_bold}>Nos inspira <span style={{color: STYLES_COMMON.colors.durazno}}>jugar</span> y <span style={{color: STYLES_COMMON.colors.tusaturado}}>experimentar</span></h4>
+                <Col xs={{span:10, offset:1}} style={styles.middle_top_text_col_1}>
+                    <h4 style={{...styles.providence_sans_bold, ...styles.middle_top_title}}>Nos inspira <span style={{color: STYLES_COMMON.colors.durazno}}>jugar</span> y <span style={{color: STYLES_COMMON.colors.tusaturado}}>experimentar</span></h4>
                 </Col>
             </Row>
-            <Row className={'text-center'} style={styles.middle_top_text_2}>
-                <Col xs={{span:8, offset:2}} className={'mt-2'}><p style={styles.filson_pro_regular}>{t('about.middle')}</p></Col>
+            <Row className={'text-center'}>
+                <Col xs={{span:8, offset:2}} className={'mt-2'}><p style={{...styles.filson_pro_regular, ...styles.middle_top_text_2}}>{t('about.middle')}</p></Col>
             </Row>
             <Row className={'text-center'}>
                 <Col xs={{span:12}}>

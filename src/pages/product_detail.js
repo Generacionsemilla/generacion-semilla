@@ -12,8 +12,10 @@ const ProductDetail = () => {
     let {productName} = useParams();
     const product = PRODUCTS.find(prod => prod.name === productName);
 
+    const smallTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.sm+')' });
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
+    const xxlargeMin = useMediaQuery({ query: '(min-width: '+STYLES_COMMON.breakpoints.xxl+')' });
 
     const styles = {
         title: {
@@ -33,6 +35,10 @@ const ProductDetail = () => {
         image:{
             width:'100%',
             webkitInputPlaceholder: 'color: red'
+        },
+        desc_text:{
+            whiteSpace: 'break-spaces',
+            fontSize: mediumTop ? '12px' : '16px'
         },
         button:{
             borderRadius: '6px',
@@ -57,7 +63,7 @@ const ProductDetail = () => {
         },
         secondImageCol:{
             zIndex: '-1',
-            marginBottom: mediumTop ? '-100px' : '-210px'
+            marginBottom: smallTop ? '-220px' : mediumTop ? '-260px' : xxlargeMin ? '-290px' : '-200px'
         }
     }
 
@@ -75,7 +81,12 @@ const ProductDetail = () => {
             </Row>
             <Row className={'text-center mt-5'}>
                 <Col xs={{span: 10, offset: 1}}>
-                    <p style={{whiteSpace: 'break-spaces'}}>{product.upper_text}</p>
+                    {!mediumTop &&
+                        <p style={styles.desc_text}>{product.upper_text_d}</p>
+                    }
+                    {mediumTop &&
+                        <p style={styles.desc_text}>{product.upper_text_m}</p>
+                    }
                 </Col>
             </Row>
             <Row className={'mt-5'}>
@@ -90,6 +101,9 @@ const ProductDetail = () => {
             </Row>
             <Row className={'mt-5 mb-5 text-center'}>
                 <Col xs={{span: 10, offset: 1}}>
+                    {mediumTop &&
+                    <p style={styles.desc_text}>{product.lower_text_m}</p>
+                    }
                     {product.active &&
                     <a href={product.link} target="_blank" rel="noreferrer" style={styles.button} className={'btn'}>Comprar</a>
                     }
