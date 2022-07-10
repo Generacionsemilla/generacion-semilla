@@ -290,21 +290,21 @@ const Contact = () => {
                                         <img src={top} style={styles.top_image}/>
                                     </Col>
                                     <Col xs={{span: 6}} md={{span:4}} style={styles.input_container_div}>
-                                        <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={{...styles.input, ...styles.filson_pro_regular}}/>
+                                        <input type="text" id="from_name" name="from_from" placeholder={'Nombre y apellido'} style={{...styles.input, ...styles.filson_pro_regular}} required={true}/>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col xs={12} className={''}>
                                 <Row>
                                     <Col xs={{span: 6, offset: 3}} md={{span:4, offset: 4}} style={styles.input_container_div}>
-                                        <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={{...styles.input, ...styles.filson_pro_regular}}/>
+                                        <input type="text" id="from_email" name="from_email" placeholder={'Email'} style={{...styles.input, ...styles.filson_pro_regular}} required={true}/>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col xs={12} className={''}>
                                 <Row>
                                     <Col xs={{span: 6, offset: 3}} md={{span:4, offset: 4}} style={styles.textarea_container_div}>
-                                        <textarea style={{...styles.input, ...styles.text_area, ...styles.filson_pro_regular}} rows={12} id="message" name="message" placeholder={'Mensaje'}/>
+                                        <textarea style={{...styles.input, ...styles.text_area, ...styles.filson_pro_regular}} rows={12} id="message" name="message" placeholder={'Mensaje'} required={true}/>
                                     </Col>
                                 </Row>
                             </Col>
