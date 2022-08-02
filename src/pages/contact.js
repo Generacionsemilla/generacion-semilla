@@ -27,7 +27,7 @@ const submitForm = (e) => {
         message: document.getElementById("message").value,
     };
 
-    axios.post(`https://generacionsemilla-backend.vercel.app//api/contact`, { form })
+    axios.post(`https://generacionsemilla-backend.vercel.app/api/contact`, { form })
         .then(res => {
             console.log(res);
             console.log(res.data);
