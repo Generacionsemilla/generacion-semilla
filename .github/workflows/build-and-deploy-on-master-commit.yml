@@ -20,6 +20,8 @@ jobs:
         run: |
           npm ci
           npm run deploy
+        env:
+          CI: false
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
