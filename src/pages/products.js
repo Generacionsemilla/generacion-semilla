@@ -13,6 +13,7 @@ const Products = () => {
     const { t } = useTranslation();
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
+    const nLines = Math.floor(PRODUCTS.length / 4) + (PRODUCTS.length % 4 !== 0 ? 1 : 0);
 
     const styles = {
         title:{
@@ -24,11 +25,12 @@ const Products = () => {
         },
         productsRow:{
             margin: '20px 0 200px',
-            minHeight: mediumTop ? '750px' : '500px',
-            height: 'calc(-700px + 100vh)'
+            minHeight: mediumTop ? ''+ (100 + 218 * PRODUCTS.length ) +'px' : ''+ (212 + 288 * nLines) +'px',
+            height: 'calc(-750px + 100vh)'
         },
         itemsRow: {
-            marginTop: '30px'
+            marginTop: '30px',
+            justifyContent: 'center'
         }
     }
 
@@ -36,23 +38,39 @@ const Products = () => {
         <Container fluid style={STYLES_COMMON.pageContainer}>
             <Header title={t('titles.products')}></Header>
             <Row style={styles.productsRow}>
-                {!mediumTop &&
+                { !mediumTop &&
                     <Col xs={12} className={'text-center'}>
                         <h3 style={styles.title}>NUESTROS PRODUCTOS</h3>
                     </Col>
                 }
-                <Col xs={{span: 10, offset: 1}}>
-                    <Row className={'text-center'} style={styles.itemsRow}>
-                        {PRODUCTS.map( (p,i) => {
-                            return <ProductItem product={p} index={i}/>
+                { !mediumTop &&
+                    <Col xs={{span: 10, offset: 1}}>
+                        {Array.from({length: nLines}).map((nouse, rowN) => {
+                            return (
+                            <Row className={'text-center'} style={styles.itemsRow}>
+                                {PRODUCTS.slice(rowN * 4, (rowN + 1) * 4).map( (p,i) => {
+                                    return (
+                                        <ProductItem product={p} index={i}/>
+                                    )
+                                })}
+                            </Row>)
                         })}
-                    </Row>
-                </Col>
+                    </Col>
+                }
+                { mediumTop &&
+                    <Col xs={{span: 10, offset: 1}}>
+                        <Row className={'text-center'} style={styles.itemsRow}>
+                            {PRODUCTS.map( (p,i) => {
+                                return <ProductItem product={p} index={i}/>
+                            })}
+                        </Row>
+                    </Col>
+                }
+
             </Row>
 
             <Footer></Footer>
         </Container>
-
     );
 };
 
