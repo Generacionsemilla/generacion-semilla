@@ -78,18 +78,5 @@ export const PRODUCTS = [
         '.png',
         false),
 
-    
-    new Product(
-    /* nombre representativo corto, todo en minuscula, sin espacios ni caracteres especiales */"primaria",
-    /* titulo del libro */'Libros para ninxs',
-    /* texto desktop */ 'Textos de ciencias de la naturaleza pensados para niñxs del primer ciclo de la escuela primaria.\nLos contenidos se basan en las prescripciones de los Diseños Curriculares de Nación, Provincia de Buenos Aires y CABA.\nCada libro incluye, además de textos sobre ciencias, actividades del tipo experiencias y experimentos, entrevistas, curiosidades, juegos, relatos sobre historias de la ciencia y diferentes recursos gráficos que colaboran en la comprensión de los contenidos. \nPor otra parte, cada libro es a su vez, un cuaderno de naturalista, porque tiene cierre elástico, hojas en blanco para registrar experiencias, un sobre para guardar recolecciones y una plancha de sticker troquelados.',
-    /* texto mobile arriba */'Textos de ciencias de la naturaleza pensados para niñxs del primer ciclo de la escuela primaria.\nLos contenidos se basan en las prescripciones de los Diseños Curriculares de Nación, Provincia de Buenos Aires y CABA.\nCada libro incluye, además de textos sobre ciencias, actividades del tipo experiencias y experimentos, entrevistas, curiosidades, juegos, relatos sobre historias de la ciencia y diferentes recursos gráficos que colaboran en la comprensión de los contenidos.',
-    /* texto mobile abajo */'Por otra parte, cada libro es a su vez, un cuaderno de naturalista, porque tiene cierre elástico, hojas en blanco para registrar experiencias, un sobre para guardar recolecciones y una plancha de sticker troquelados.',
-    /* link tienda (boton comprar) */'https://tiendageneracionsemilla.ar/MLA-1137619555-libro-curiosa-botanica-1-botanica-para-ninxs-_JM',
-    /* formato imagenes arriba (mobiles y desktop) */ '.png',
-    /* formato imagenes abajo (mobiles y desktop) */'.png',
-    /* activo o no (false = imagenes proximamente) */true),
-
-
 
     ]; // <---- NO BORRAR!!!
