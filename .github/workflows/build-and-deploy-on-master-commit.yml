@@ -24,6 +24,7 @@ jobs:
           npm run deploy
         env:
           CI: false
+          GITHUB_TOKEN: ${{ secrets.github_token }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
