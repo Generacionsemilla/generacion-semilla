@@ -53,7 +53,7 @@ const ProductItem = ({product, index}) => {
         return(
             <Col xs={12} md={4} >
                 <Link style={styles.link} to={'/products/' + product.name}>
-                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
+                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default} alt={product.name}></img>
                     <p style={styles.product_name}>{product.title.toUpperCase()}</p>
                 </Link>
                 <Link style={styles.more} to={'/products/' + product.name}>Ver más</Link>
@@ -65,7 +65,7 @@ const ProductItem = ({product, index}) => {
             {index % 2 === 0 &&
             <Col xs={6}>
                 <Link style={styles.link} to={'/products/' + product.name}>
-                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
+                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default} alt={product.name}></img>
                 </Link>
             </Col>
             }
@@ -79,7 +79,7 @@ const ProductItem = ({product, index}) => {
             {index % 2 !== 0 &&
             <Col xs={6}>
                 <Link style={styles.link} to={'/products/' + product.name}>
-                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
+                    <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default} alt={product.name}></img>
                 </Link>
             </Col>
             }
