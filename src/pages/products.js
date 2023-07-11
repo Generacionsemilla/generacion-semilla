@@ -13,7 +13,7 @@ const Products = () => {
     const { t } = useTranslation();
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
-    const nLines = Math.floor(PRODUCTS.length / 4) + (PRODUCTS.length % 4 !== 0 ? 1 : 0);
+    const nLines = Math.floor(PRODUCTS.length / 3) + (PRODUCTS.length % 3 !== 0 ? 1 : 0);
 
     const styles = {
         title:{
@@ -25,10 +25,14 @@ const Products = () => {
         },
         productsRow:{
             margin: '20px 0 200px',
-            minHeight: mediumTop ? ''+ (100 + 218 * PRODUCTS.length ) +'px' : ''+ (212 + 288 * nLines) +'px',
+            minHeight: mediumTop ? ''+ (100 + 218 * PRODUCTS.length ) +'px' : ''+ (212 + 358 * nLines) +'px',
             height: 'calc(-750px + 100vh)'
         },
         itemsRow: {
+            marginTop: '100px',
+            justifyContent: 'center'
+        },
+        firstRow: {
             marginTop: '30px',
             justifyContent: 'center'
         }
@@ -47,8 +51,8 @@ const Products = () => {
                     <Col xs={{span: 10, offset: 1}}>
                         {Array.from({length: nLines}).map((nouse, rowN) => {
                             return (
-                            <Row className={'text-center'} style={styles.itemsRow}>
-                                {PRODUCTS.slice(rowN * 4, (rowN + 1) * 4).map( (p,i) => {
+                            <Row className={'text-center'} style={rowN === 0 ? styles.firstRow : styles.itemsRow}>
+                                {PRODUCTS.slice(rowN * 3, (rowN + 1) * 3).map( (p,i) => {
                                     return (
                                         <ProductItem product={p} index={i}/>
                                     )

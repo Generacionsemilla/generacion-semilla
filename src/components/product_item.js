@@ -51,7 +51,7 @@ const ProductItem = ({product, index}) => {
 
     if(!mediumTop){
         return(
-            <Col xs={12} md={3} >
+            <Col xs={12} md={4} >
                 <Link style={styles.link} to={'/products/' + product.name}>
                     <img style={styles.icons} src={require('../assets/products/icons/' + product.name + '.png').default}></img>
                     <p style={styles.product_name}>{product.title.toUpperCase()}</p>
