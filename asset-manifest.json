@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.a3606a1f.chunk.css",
-    "main.js": "/static/js/main.cc25a037.chunk.js",
-    "main.js.map": "/static/js/main.cc25a037.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d79bbc39.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d79bbc39.js.map",
+    "main.js": "/static/js/main.51f8ea17.chunk.js",
+    "main.js.map": "/static/js/main.51f8ea17.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8ef27dbb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8ef27dbb.js.map",
     "static/css/2.d8cb5cde.chunk.css": "/static/css/2.d8cb5cde.chunk.css",
-    "static/js/2.7a6560f1.chunk.js": "/static/js/2.7a6560f1.chunk.js",
-    "static/js/2.7a6560f1.chunk.js.map": "/static/js/2.7a6560f1.chunk.js.map",
-    "static/js/3.e8d37e27.chunk.js": "/static/js/3.e8d37e27.chunk.js",
-    "static/js/3.e8d37e27.chunk.js.map": "/static/js/3.e8d37e27.chunk.js.map",
+    "static/js/2.e18cd5b9.chunk.js": "/static/js/2.e18cd5b9.chunk.js",
+    "static/js/2.e18cd5b9.chunk.js.map": "/static/js/2.e18cd5b9.chunk.js.map",
+    "static/js/3.869a0329.chunk.js": "/static/js/3.869a0329.chunk.js",
+    "static/js/3.869a0329.chunk.js.map": "/static/js/3.869a0329.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.d8cb5cde.chunk.css.map": "/static/css/2.d8cb5cde.chunk.css.map",
     "static/css/main.a3606a1f.chunk.css.map": "/static/css/main.a3606a1f.chunk.css.map",
-    "static/js/2.7a6560f1.chunk.js.LICENSE.txt": "/static/js/2.7a6560f1.chunk.js.LICENSE.txt",
+    "static/js/2.e18cd5b9.chunk.js.LICENSE.txt": "/static/js/2.e18cd5b9.chunk.js.LICENSE.txt",
     "static/media/arrow.3436cd70.svg": "/static/media/arrow.3436cd70.svg",
     "static/media/background.1e860c86.svg": "/static/media/background.1e860c86.svg",
     "static/media/background_m.ffd91874.svg": "/static/media/background_m.ffd91874.svg",
@@ -26,8 +26,8 @@
     "static/media/coming_soon_1.png": "/static/media/coming_soon_1.511a09f4.png",
     "static/media/coming_soon_2.png": "/static/media/coming_soon_2.b41a9468.png",
     "static/media/curiosa.png": "/static/media/curiosa.d986382d.png",
-    "static/media/curiosa_1.png": "/static/media/curiosa_1.2e911573.png",
-    "static/media/curiosa_2.png": "/static/media/curiosa_2.264cb565.png",
+    "static/media/curiosa_1.png": "/static/media/curiosa_1.d3cad454.png",
+    "static/media/curiosa_2.png": "/static/media/curiosa_2.27473c9d.png",
     "static/media/didacticos.png": "/static/media/didacticos.e390640c.png",
     "static/media/didacticos_1.png": "/static/media/didacticos_1.a041452a.png",
     "static/media/didacticos_2.png": "/static/media/didacticos_2.3188bce3.png",
@@ -48,7 +48,7 @@
     "static/media/logo_reducido.eddbaed3.png": "/static/media/logo_reducido.eddbaed3.png",
     "static/media/mandioca.png": "/static/media/mandioca.ef2f78b8.png",
     "static/media/mandioca_1.png": "/static/media/mandioca_1.7c44aba5.png",
-    "static/media/mandioca_2.png": "/static/media/mandioca_2.1aa1b9d9.png",
+    "static/media/mandioca_2.png": "/static/media/mandioca_2.c672ca98.png",
     "static/media/menu_back_full_home.ec8a70a4.svg": "/static/media/menu_back_full_home.ec8a70a4.svg",
     "static/media/menu_back_full_other.16751c30.svg": "/static/media/menu_back_full_other.16751c30.svg",
     "static/media/menu_back_m_home.070a3d10.png": "/static/media/menu_back_m_home.070a3d10.png",
@@ -79,10 +79,10 @@
     "static/media/youtube.3601793a.png": "/static/media/youtube.3601793a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d79bbc39.js",
+    "static/js/runtime-main.8ef27dbb.js",
     "static/css/2.d8cb5cde.chunk.css",
-    "static/js/2.7a6560f1.chunk.js",
+    "static/js/2.e18cd5b9.chunk.js",
     "static/css/main.a3606a1f.chunk.css",
-    "static/js/main.cc25a037.chunk.js"
+    "static/js/main.51f8ea17.chunk.js"
   ]
 }
