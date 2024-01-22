@@ -64,7 +64,7 @@ const Footer = ({showSocials}) => {
             <Col xs={12}>
                     <Row className={'text-center'} style={styles.footer.rows}>
                       <Col xs={{span: 2,offset:5}}>
-                        <a href='https://api.whatsapp.com/send?phone=541124014094&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
+                        <a href='https://api.whatsapp.com/send?phone=541122557494&text=%C2%A1Hola%21+Estoy+en+la+tienda+Editorial+Generaci%C3%B3n+semilla+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n' target="_blank" rel="noreferrer" ><img style={styles.footer.icon} src={whatsapp} /></a>
                       </Col>
                     </Row>
                     <Row className={'text-center'}
@@ -91,7 +91,7 @@ const Footer = ({showSocials}) => {
                         <Row className={'text-center'} >
                             <Col>Envíos a todo el país</Col>
                             <Col>©Generación semilla, 2021</Col>
-                            <Col>Caseros, Gran Buenos aires</Col>
+                            <Col>San Martín, Gran Buenos aires</Col>
                         </Row>
                     </Col>
                 </Row>

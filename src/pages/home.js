@@ -32,8 +32,8 @@ const Home = () => {
             width: '100%'
         },
         button:{
-            width: largeTop ? '115px' :'138px',
-            height: largeTop ? '32px' :'38px',
+            width: largeTop ? '250px' : '320px',
+            height: largeTop ? '60px' : '38px',
             borderRadius: '6px',
             borderColor: STYLES_COMMON.colors.tusaturado,
             backgroundColor: STYLES_COMMON.colors.tusaturado,
@@ -82,13 +82,13 @@ const Home = () => {
                         <p style={styles.logoPhrase} className={'text-center'}><span>Editorial </span><span
                             style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
                             style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                        <Link to="/about" className={'btn btn-sm'} style={styles.button}>Conocenos</Link>
+                        <Link to="/products" className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalgo</Link>
                     </Col>
                 }
                 {mediumTop &&
                     <Col xs={{span: 10, offset: 1}} >
                         <img style={styles.logo} src={logo}/>
-                        <Link to="/about" className={'btn btn-sm'} style={styles.button}>Conocenos</Link>
+                        <Link to="/products" className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalgo</Link>
                     </Col>
                 }
                 {!mediumTop &&
