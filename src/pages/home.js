@@ -11,6 +11,8 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import {Link} from "react-router-dom";
 
+const googleDriveGatalogLink = "https://drive.google.com/drive/folders/1MrwbFFg6cEc_FDWjw0WDGY52cfSON58p";
+
 const Home = () => {
     const { t } = useTranslation();
 
@@ -82,13 +84,13 @@ const Home = () => {
                         <p style={styles.logoPhrase} className={'text-center'}><span>Editorial </span><span
                             style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
                             style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                        <Link to="/products" className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalgo</Link>
+                        <a href={googleDriveGatalogLink} target='_Blank' className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalgo</a>
                     </Col>
                 }
                 {mediumTop &&
                     <Col xs={{span: 10, offset: 1}} >
                         <img style={styles.logo} src={logo}/>
-                        <Link to="/products" className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalgo</Link>
+                        <a href={googleDriveGatalogLink} target='_Blank' className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalgo</a>
                     </Col>
                 }
                 {!mediumTop &&
