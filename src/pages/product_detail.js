@@ -112,8 +112,8 @@ const ProductDetail = () => {
                     }
                 </Col>
             </Row>
-            <Row className={'px-0'}>
-                <Col xs={12} className={'p-0'} style={styles.secondImageCol}>
+            <Row className={'px-0 pb-32'}>
+                <Col xs={12} className={'p-0 mb-5'} style={styles.secondImageCol}>
                     {product.active &&
                     <img style={styles.image} src={require(`../assets/products/images/${mediumTop ? 'mobile/' : 'desktop/'}${product.name}_2${product.image1_format}`).default}></img>
                     }
