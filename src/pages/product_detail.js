@@ -16,7 +16,7 @@ const ProductDetail = () => {
     const mediumTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.md+')' });
     const largeTop = useMediaQuery({ query: '(max-width: '+STYLES_COMMON.breakpoints.lg+')' });
     const xxlargeMin = useMediaQuery({ query: '(min-width: '+STYLES_COMMON.breakpoints.xxl+')' });
-
+    console.log({product, productName});
     const styles = {
         title: {
             fontFamily: 'tomarik-brush,sans-serif',
@@ -92,7 +92,7 @@ const ProductDetail = () => {
             <Row className={'mt-5'}>
                 <Col xs={12} className={'p-0'}>
                     {product.active &&
-                    <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + product.name + '_1'+product.image1_format).default}></img>
+                    <img style={styles.image} src={require(`../assets/products/images/${mediumTop ? 'mobile/' : 'desktop/'}${product.name}_1${product.image1_format}`).default}></img>
                     }
                     {!product.active &&
                     <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + 'coming_soon_1.png').default}></img>
@@ -112,10 +112,10 @@ const ProductDetail = () => {
                     }
                 </Col>
             </Row>
-            <Row className={'px-0'}>
-                <Col xs={12} className={'p-0'} style={styles.secondImageCol}>
+            <Row className={'px-0 pb-32'}>
+                <Col xs={12} className={'p-0 mb-5'} style={styles.secondImageCol}>
                     {product.active &&
-                    <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + product.name + '_2'+product.image2_format).default}></img>
+                    <img style={styles.image} src={require(`../assets/products/images/${mediumTop ? 'mobile/' : 'desktop/'}${product.name}_2${product.image1_format}`).default}></img>
                     }
                     {!product.active &&
                     <img style={styles.image} src={require('../assets/products/images/' + (mediumTop ? 'mobile/' : 'desktop/') + 'coming_soon_2.png').default}></img>
