@@ -84,13 +84,13 @@ const Home = () => {
                         <p style={styles.logoPhrase} className={'text-center'}><span>Editorial </span><span
                             style={{color: STYLES_COMMON.colors.durazno}}>lúdica </span><span>y </span><span
                             style={{color: STYLES_COMMON.colors.tusaturado}}>experimental</span></p>
-                        <a href={googleDriveGatalogLink} target='_Blank' className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalogo</a>
+                        <a href={googleDriveGatalogLink} target='_Blank' className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catálogo</a>
                     </Col>
                 }
                 {mediumTop &&
                     <Col xs={{span: 10, offset: 1}} >
                         <img style={styles.logo} src={logo}/>
-                        <a href={googleDriveGatalogLink} target='_Blank' className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catalogo</a>
+                        <a href={googleDriveGatalogLink} target='_Blank' className={'btn btn-sm'} style={styles.button}>Accedé a nuestro catálogo</a>
                     </Col>
                 }
                 {!mediumTop &&
