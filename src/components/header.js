@@ -45,7 +45,7 @@ const Header = ({isHome, title}) => {
                 zIndex: '3',
                 top: '0',
                 width: '100%',
-                maxHeight: mediumTop && isHome ?  '170px' : '120px'
+                maxHeight: mediumTop && isHome ?  '170px' : '135px'
             },
             headerBackgroundIcon:{
                 position: "absolute",
@@ -119,7 +119,7 @@ const Header = ({isHome, title}) => {
             title:{
                 zIndex: '6',
                 position: 'relative',
-                marginTop: '35px',
+                marginTop: '25px',
                 color: STYLES_COMMON.colors.blancoHielo,
                 fontFamily: 'tomarik-brush,sans-serif',
                 fontWeight: '700',

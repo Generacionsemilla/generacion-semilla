@@ -14,7 +14,8 @@ const ProductItem = ({product, index}) => {
         icons: {
             maxWidth: mediumTop ? '100%' : largeTop ? '125px' : '150px',
             maxHeight: mediumTop ? '150px' : largeTop ? '125px' : '150px',
-            float: mediumTop ? (index % 2 === 0 ? 'left' : 'right') : ''
+            float: mediumTop ? (index % 2 === 0 ? 'left' : 'right') : '',
+            marginBottom: "40px"
         },
         product_name: {
             fontFamily: 'tomarik-brush,sans-serif',
@@ -22,11 +23,10 @@ const ProductItem = ({product, index}) => {
             fontStyle: 'normal',
             color: STYLES_COMMON.colors.verdeAzulado,
             fontSize: smallTop ? '16px' : largeTop ? '20px' : '25px',
-            minHeight: !mediumTop && '75px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: !mediumTop && '20px'
+            // whiteSpace: "nowrap"
         },
         more: {
             fontFamily: 'filson-pro,sans-serif',
